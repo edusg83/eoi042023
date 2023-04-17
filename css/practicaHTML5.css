@@ -1,0 +1,17 @@
+header {
+    text-align: center;
+}
+
+nav, main {
+    float: left;
+    position: relative;
+}
+
+aside {
+    float: right;
+    position: relative;
+}
+
+footer {
+    font-weight: bold;
+}
