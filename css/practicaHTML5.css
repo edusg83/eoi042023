@@ -4,17 +4,7 @@ flex-direction: row;
 flex-wrap : wrap;
 justify-content: space-around;}
 
-header{
-    margin-left: 600px;
+header, nav, footer{
+    text-align: center;
 }
-
-footer{
-    margin-left: 600px;
-}
-
-main{
-    display : flex; 
-    flex-direction: column;
-}
-
 
