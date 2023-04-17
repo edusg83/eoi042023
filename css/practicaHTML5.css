@@ -1,0 +1,14 @@
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+header{
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+}
