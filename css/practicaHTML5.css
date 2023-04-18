@@ -1,0 +1,12 @@
+header{
+    text-align: center;
+}
+nav,main,article{
+    text-align: left;
+}
+aside{
+    text-align: right;
+}
+footer{
+    text-align: center;
+}
