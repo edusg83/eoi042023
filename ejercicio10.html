@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="images/logoHTML5.png" type="image/png" sizes="16x16">
-    <link rel="stylesheet" href="css/Ej8Estilo.css">
+    <link rel="stylesheet" href="css/Ej10Estilo.css">
     <script type="text/javascript" src="js/practicaHTML5.js">
     </script>
 </head>
@@ -18,7 +18,7 @@
         <article>
             <h1>Elementos de texto</h1>
             <p>
-            <pre>
+            <pre id="lorem1">
 
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eros justo, tincidunt in augue eget,
                 vulputate consectetur neque. Donec porta, leo et tristique molestie, magna nunc sagittis dui, vel
@@ -250,17 +250,24 @@
             <p>Albert Einstein</p>
         </article>
         <aside>
-            <figure>
-                <img src="images/frankClark.jpg" alt="Imagen no encontrada" title="foto de Frank A. Clark"
-                    width="100px" height="100px">
-                <figcaption><a href="#cita1" target="_blank" title="cita de Frank A. Clark "> Frank A. Clark</a>
-                </figcaption>
-            </figure>
-            <figure>
-                <img src="images/albertEinstein.jpeg" alt="Imagen no encontrada" title="foto de Albert Einstein"
-                    width="100px" height="100px">
-                <figcaption><a href="#cita2" title="cita de Albert Einstein"> Albert Einstein</a></figcaption>
-            </figure>
+            <details>
+                <summary>Citas</summary>
+                <p>
+                <figure>
+                    <img src="images/frankClark.jpg" alt="Imagen no encontrada" title="foto de Frank A. Clark"
+                        width="100px" height="100px">
+                    <figcaption><a href="#cita1" target="_blank" title="cita de Frank A. Clark "> Frank A. Clark</a>
+                    </figcaption>
+                </figure>
+                </p>
+                <p>
+                <figure>
+                    <img src="images/albertEinstein.jpeg" alt="Imagen no encontrada" title="foto de Albert Einstein"
+                        width="100px" height="100px">
+                    <figcaption><a href="#cita2" title="cita de Albert Einstein"> Albert Einstein</a></figcaption>
+                </figure>
+                </p>
+            </details>
         </aside>
     </main>
     <footer class="centrar">

@@ -14,3 +14,7 @@ footer{
     flex-wrap : wrap;
     justify-content: space-around;
 }
+
+aside{
+    margin-top: 100px;
+}
