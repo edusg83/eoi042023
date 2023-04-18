@@ -1,0 +1,16 @@
+main{
+display : flex;
+flex-direction: row;
+flex-wrap : wrap;
+justify-content: space-around;}
+
+header, nav, footer{
+    text-align: center;
+}
+
+footer{
+    display : flex;
+    flex-direction: row; 
+    flex-wrap : wrap;
+    justify-content: space-around;
+}
