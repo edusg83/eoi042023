@@ -1,10 +1,10 @@
 header{
     text-align: center;
 }
-nav,main,article{
+nav,main,article,address{
     text-align: left;
 }
-aside{
+aside,time{
     text-align: right;
 }
 footer{
