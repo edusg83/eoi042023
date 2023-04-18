@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <title>Elementos de texto</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="images/logoHTML5.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="css/Ej12Estilo.css">
+    <script type="text/javascript" src="js/practicaHTML5.js">
+    </script>
+</head>
+
+<body>
+    <main id="main" class="main">
+        <section>
+            <h1>Formulario de prueba</h1>
+            <form name="formulariopruebas" method="get">
+                <fieldset>
+                    <legend>Datos personales</legend>
+                    <p>
+                        <label id="nombreTexto" for="nombre"> Nombre:</label> <input type="text" id="nombreo">
+                        <label id="apellidosTexto" for="apellidos"> Apellidos:</label> <input type="text"
+                            id="apellidos">
+                    </p>
+                    <label for="email" id="emailTexto">Email:</label> <input type="email" id="email">
+                    <label for="tel" id="telTexto"> telefono:</label> <input type="tel" id="tel">
+                    <p>
+                        <label for="cumple" id="cumpleTexto">Cumpleaños:</label><input type="date" id="cumple">
+                        <label for="pass" id="passTexto">Contraseña: </label><input type="password" id="pass">
+                    </p>
+                    <p>
+                        <label for="selectAutor" id="selectAutorTexto">
+                            Selecciona al autor favorito de la siguiente lista:</label>
+                        <select name="eleccionCita" id="selectAutor">
+                            <option value="0">Autores</option>
+                            <option value="Albert Einstein">Albert Einstein</option>
+                            <option value="Frank Clark">Frank Clark</option>
+                            <option value="Cervantes">Cervantes</option>
+                        </select>
+                    </p>
+                </fieldset>
+                
+
+                <fieldset>
+                    <legend>Sistema de referidos</legend>
+                    <p>
+                        <label for="busqueda" id="busquedaTexto"> Introduce el apodo del creador al que quieras apoyar </label>
+                        <input type="search" id="busqueda">
+                    </p>
+                    <P>
+                        <label for="url" id="urlTexto"> O bien introduce la URL de su canal</label>
+                        <input type="url" name="url" id="url">
+                    </P>
+                    
+                </fieldset>
+
+                <p>
+                    <label for="estado" id="estadoTexto">Estado del formulario pendiente de rellenar en este punto: </label>
+                    <progress id="estado" value="60" max="100"></progress>
+                </p>
+                <p>
+                    <label for="rango" id="rangoTexto"> Indique como de intuitivo le está pareciendo el formulario: </label>
+                    <input type="range" name="range" id="rango" value="0">
+                </p>
+
+                <fieldset>
+                    <legend>Creación del personaje</legend>
+                    <p>
+                    <label id="apodoTexto" for="apodo"> Apodo:</label> <input type="text" id="apodo">
+                    <input type="button" value="comprobar disponibilidad">
+                </p>    
+                    <label for="ocultar" id="ocultarTexto"> Ocultar apodo en las busquedas de otros jugadores en el juego: </label> <input type="checkbox" id="ocultar">
+                <p>
+                    <label for="piel" id="pielText"> Selecciona el color de piel: </label>
+                    <input type="color" name="piel" id="piel"> 
+            
+                    <label for="cicatriz" id="cicatrizTexto">Cicatrices</label><input type="radio" id="cicactriz">
+                    <label for="calvo" id="calvoTexto">Calvo</label><input type="radio" id="calvo">
+                    <label for="enano" id="enanoTexto">Enano</label><input type="radio" id="enano">
+
+                    
+                </p>
+                <p>
+                <label for="comentarios" id="comentariosTexto">Escriba la descripción de la personalidad de su personaje:</label>
+            </p>
+                <textarea name="comentarios" cols="70" rows="5" id="comentarios"></textarea>
+                </fieldset>
+                             
+                <button type="submit"> Enviar</button>
+                <button type="reset"> Borrar</button>    
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
