@@ -63,6 +63,53 @@
         </table>
 
     </section>
+    <section>
+        <h2>Formularios</h2>
+        <form name="f1" method="get" action="http://localhost:8080/pruebas">
+            <label for="nombre">Nombre: </label>
+           <input id="nombre" type="text" name="nombre" /> <br>
+
+           <label>Fecha de nacimiento:</label>
+           <input type="date" name="fechaNacimiento" /><br>
+
+           <label>Fecha cita:</label>
+           <input type="datetime-local" name="fecha" /><br>
+
+           <label>Descripción:</label>
+           <textarea type="text" rows="12" cols="40" name="descripción"></textarea><br>
+           <label>Selecciona un libro</label>
+           <select name="book" id="bookslist">
+            <option value="IT">IT</option>
+            <option value="Carrie">Carrie</option>
+            <option value="The Shining">The Shining</option>
+            <option value="Misery">Misery</option>
+           </select><br>
+           <label>Tipo de libro:</label>
+           <select name="tipoLibro" id="tipoLibro">
+            <option value="TBlanda">Tapa blanda</option>
+            <option value="TDura">Tapa dura</option>
+           </select><br>
+           <label>METER</label>
+           <meter value="100" min="0" max="100" low="40" high="80" optimum="100">60</meter><br>
+           <label>PROGRESS</label>
+           <progress value="60" max="100">0%</progress><br>
+           <label>DATALIST</label>
+           <datalist id="listaTels"> 
+                <option value="123123123" label="teléfono móvil">
+                <option value="456456456" label="telefono fijo">
+            </datalist>
+            <p><label>Teléfono : <input type="tel" name="telefono" list="listaTels"></label></p>
+            Teléfono <input type="number" /><br>
+            <label for="tel">Teléfono: </label><input id="tel" type="number" placeholder="Introduce el teléfono" /><br>
+            <input type="number" placeholder="Teléfono" />
+            <fieldset>
+                <legend>Datos personales</legend>
+                <input type="text" placeholder="Nombre" /><br>
+                <input type="password" placeholder="Password" />
+            </fieldset>
+        </label>
+        </form>
+    </section>
    </main>
    <footer>Footer</footer>
 </body>
