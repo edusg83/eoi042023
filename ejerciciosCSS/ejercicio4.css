@@ -26,3 +26,6 @@ p:first-of-type{
     color: red;
 }
 
+:not(section){
+    background-color: red;
+}
