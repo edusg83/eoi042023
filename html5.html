@@ -2,7 +2,11 @@
 <html>
 <head>
     <title>Título cambio</title>
-
+<style>
+    .padre span {
+color:red;
+}
+    </style>
 </head>
 <body>
    <header>Cabecera</header>
@@ -10,7 +14,9 @@
    <main>
     <section>
         <h1>Vehículos</h1>
-        <p>Puedo de hablar de vehículos. Introducción.</p>
+        <div class="padre">
+           <p>Puedo de hablar de vehículos.<span>Aqui dentro otro párrafo</span> <span>Introducción</span>.</p>
+        </div>
     </section>
     <section>
         <h2>Vehículos híbridos</h2>
