@@ -26,11 +26,13 @@ nav {
     font-size: 18px;
 }
 
-body{
+main{
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     height: 100px;
+
 }
 #formulario{
     margin: 0 auto;
