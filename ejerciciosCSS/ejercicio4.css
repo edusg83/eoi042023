@@ -26,6 +26,6 @@ p:first-of-type{
     color: red;
 }
 
-:not(section){
+:not(b){
     background-color: red;
 }
