@@ -1,4 +1,4 @@
-p:nth-child(2) {
+/*p:nth-child(2) {
     color: red;
 }
 
@@ -17,4 +17,17 @@ p:nth-child(even){
 
 p:nth-child(odd){
     background-color: yellow;
+}
+*/
+/*
+section:only-child {
+    color: red;
+}*/
+/*
+P:first-of-type{
+    color: red;
+}*/
+
+:not(b){
+    background-color: red;
 }
