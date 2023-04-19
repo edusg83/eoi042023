@@ -1,0 +1,35 @@
+/* section[name="seccion1"] {
+    color: red;
+} */
+
+/* .articulo2 {
+color: red;
+} */
+
+/* p+section {
+    color: red;
+} */
+
+/* article[class="articulo2"]{ 
+    color:red
+} */
+
+/* main>section {
+    color: red;
+} */
+
+article[class*="articulo"]{ 
+    color:red
+}
+
+/* article[class$="2"]{ 
+    color:red
+} */
+
+/* article[class^="art"]{ 
+    color:red
+}
+
+#sec1 {
+    color: red;
+} */
