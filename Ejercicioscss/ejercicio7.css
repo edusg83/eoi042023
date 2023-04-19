@@ -4,3 +4,8 @@
 .p3{
     margin-top: 2em;
 }
+section{
+    background-image: url(logoEOI.jpg);
+    background-repeat: repeat-x;
+    background-size: 400PX;
+}
