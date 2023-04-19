@@ -1,0 +1,7 @@
+p:first-child{
+    margin: 1em;
+}
+
+p:nth-child(3){
+    margin-top: 2em;
+}
