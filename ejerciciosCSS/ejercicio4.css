@@ -5,3 +5,24 @@ p:nth-child(2){
 p:first-child{
     color: red;
 }
+
+p:last-child{
+    color: red;
+}
+
+p:nth-child(even){
+    background-color: red;
+}
+
+p:nth-child(odd){
+    background-color: yellow;
+}
+
+section:only-child{
+    color: red;
+}
+
+p:first-of-type{
+    color: red;
+}
+
