@@ -7,7 +7,7 @@ nav {
     margin-left: -5px;
     margin-right: -5px;
     margin-top: -5px;
-    padding: 20px;    
+    padding: 20px;
 }
 
 #logo {
@@ -18,7 +18,10 @@ nav {
     font-size: 20px;
 }
 
-#home,#moon,#images,#contact {
+#home,
+#moon,
+#images,
+#contact {
     color: white;
     text-decoration: none;
     margin-right: 15px;
@@ -26,15 +29,34 @@ nav {
     font-size: 18px;
 }
 
-main{
+main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: row;
+    background-image: url(/images/luna.jpeg);
+    background-size: auto;
 }
 
-#formulario{
+#s1,#s3,#formulario {
+    padding-top: 60px;
+    padding-left: 450px;
+    padding-right: 450px;
+    padding-bottom: 60px;
+    background-color: white;
+    margin-left: -200px;
+    margin-right: -200px;
+}
+
+
+#s2 {
+    padding-top: 100px;
+    padding-bottom: 350px;
+}
+
+
+#formulario {
     margin: 0 auto;
     text-align: center;
 }
