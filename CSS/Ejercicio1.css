@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mi página de ejemplo</title>
+	<link rel="stylesheet" type="text/css" href="css/ejercicio1.css">
+    <style> 
+    p {
+        color: red;
+    }
+</style>    
+
+</head>
+<body>
+	<p>CURSO CSS EOI</p>
+</body>
+</html>
