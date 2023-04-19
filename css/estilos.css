@@ -18,10 +18,7 @@ nav {
     font-size: 20px;
 }
 
-#home,
-#moon,
-#images,
-#contact {
+#home,#moon,#images,#contact {
     color: white;
     text-decoration: none;
     margin-right: 15px;
@@ -37,6 +34,8 @@ main {
     flex-direction: row;
     background-image: url(/images/luna.jpeg);
     background-size: auto;
+    background-position-y:180px;
+    overflow: hidden;
 }
 
 #s1,#s3,#formulario {
@@ -59,10 +58,17 @@ main {
 #formulario {
     margin: 0 auto;
     text-align: center;
+    background-color: lightgrey;
 }
 
 footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: black;
+    color: white;
+    padding-top: 45px;
+    padding-bottom: 40px;
+    margin:-8px ;
+    margin-top:0px ;
 }
