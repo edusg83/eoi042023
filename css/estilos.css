@@ -1,3 +1,31 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: black;
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-top: -5px;
+    padding: 20px;    
+}
+
+#logo {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    size: 100px;
+    font-size: 20px;
+}
+
+#home,#moon,#images,#contact {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    size: 100px;
+    font-size: 18px;
+}
+
 body{
     display: flex;
     align-items: center;
