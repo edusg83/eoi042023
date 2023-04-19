@@ -1,0 +1,15 @@
+p:nth-child(even) {
+    color: red;
+}
+
+p:nth-child(odd) {
+    color: yellow;
+}
+
+section {
+    color: red;
+}
+
+p:first-child {
+    color: red;
+}
