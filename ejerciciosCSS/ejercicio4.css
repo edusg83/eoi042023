@@ -1,0 +1,7 @@
+p:nth-child(2){
+    color:red;
+}
+
+p:first-child{
+    color: red;
+}
