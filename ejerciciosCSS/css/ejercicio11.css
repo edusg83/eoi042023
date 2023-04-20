@@ -9,10 +9,12 @@
     0% {
     background: red;
     color: white;
+    translate: 0,0;
     }
     25% {
     background: blue;
     color: green;
+    translate: 200,0;
     }
     50% {
     background: green;
