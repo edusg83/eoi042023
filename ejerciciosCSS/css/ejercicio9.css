@@ -4,5 +4,5 @@
 }
 
 p:last-child{
-    background:-webkit-linear-gradient(2px, yellow, orange)
+    background:-webkit-linear-gradient(top right, yellow, orange)
 }
