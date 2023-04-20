@@ -1,0 +1,23 @@
+@mixin flotar-derecha-inline {
+    display: inline;
+    float: right;
+}
+
+@mixin cuadrado-rojo {
+    border: 20px;
+    border-style: double;
+    border-color: aquamarine;
+}
+
+p:nth-child(even) {
+    @include flotar-derecha-inline;
+    @include cuadrado-rojo;
+}
+
+.p1{
+    background-color: beige;
+}
+
+.p3{
+    @extend .p1;
+}

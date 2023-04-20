@@ -1,0 +1,13 @@
+p:nth-child(even) {
+  display: inline;
+  float: right;
+  border: 20px;
+  border-style: double;
+  border-color: aquamarine;
+}
+
+.p1, .p3 {
+  background-color: beige;
+}
+
+/*# sourceMappingURL=ejercicio15.css.map */
