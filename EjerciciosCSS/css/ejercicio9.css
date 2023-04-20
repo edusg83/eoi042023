@@ -1,0 +1,7 @@
+.p2 {
+    text-shadow: black 10px 10px 5px;
+}
+
+.p4 {
+    background: -webkit-line-break(bottom, red, blue);
+}
