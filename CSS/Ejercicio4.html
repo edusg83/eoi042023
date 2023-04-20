@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4</title>
+    <style>
+      /* Selector a*/
+      #sec1 p:nth-of-type(2) {
+        color: red;
+      }
+      /* Selector b */
+      #sec1 p:first-of-type {
+        color: red;
+      }
+      /* Selector c*/
+      #sec1 p:last-of-type {
+        color: red;
+      }
+      /* Selector d */
+      #sec1 p:nth-of-type(even) {
+        background-color: red;
+      }
+      #sec1 p:nth-of-type(odd) {
+        background-color: yellow;
+      }
+      /* Selector e*/
+      main > section:only-child {
+        color: red;
+      }
+      /* Selector f */
+      #sec1 p:first-of-type {
+        color: red;
+      }
+      /* Selector g*/
+      #sec1 p:not(:first-of-type) {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section id="sec1" name="seccion1">
+        <p class="p1">Párrafo 1</p>
+        <p class="p2">Parrafo 2</p>
+        <p class="p3">Párrafo 3</p>
+        <p class="p4">Párrafo 4</p>
+      </section>
+    </main>
+  </body>
+</html>
