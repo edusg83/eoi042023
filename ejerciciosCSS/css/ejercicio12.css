@@ -1,14 +1,7 @@
-#sec1{
-    column-count: 2;
-    text-align: center;
-    
-}
 p:nth-child(even){
-    position:static;
-    left: 20px;
+    float: right;
 }
 
 p:nth-child(odd){
-    position:static;
-    right: 20px;
+    float: left
 }
