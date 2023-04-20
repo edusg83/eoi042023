@@ -1,6 +1,6 @@
 .p2{
     color: white;
-    
+    text-align: center;
     /*animation:mianimaciontxt 1s ease-in-out 0s infinite normal none;*/
     animation:mianimacion, 2.5s ease-in-out 0s infinite normal none;
 }
