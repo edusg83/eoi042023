@@ -1,7 +1,8 @@
 .p2{
     color: white;
-
-    animation:mianimacion 1s ease-in-out 0s infinite normal none;
+    
+    /*animation:mianimaciontxt 1s ease-in-out 0s infinite normal none;*/
+    animation:mianimacion, 2.5s ease-in-out 0s infinite normal none;
 }
 
 @keyframes mianimacion{
@@ -18,4 +19,20 @@
         background: red;
     }
     }
+
+@keyframes mianimaciontxt{
+    0% {
+    color: white;
+    }
+    25% {
+    color: green;
+    }
+    50% {
+    color: blue;
+    }
+    100% {
+    color: white;
+    }
+    }
+    
     
