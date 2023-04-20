@@ -1,0 +1,8 @@
+p:nth-child(2){
+    transform: rotate(180deg);
+}
+
+.p4{
+    translate: 100px;
+    transform: rotate3d(2, 2, 2 45deg);
+}
