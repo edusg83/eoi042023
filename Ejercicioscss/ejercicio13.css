@@ -1,0 +1,19 @@
+section{
+  display: flex;
+  flex-direction: row;
+}
+/*section{
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}*/
+/*section{
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  align-items: flex-end;
+}*/
+p {
+  border: 1px solid black;
+  padding: 10px;
+}
