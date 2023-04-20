@@ -1,0 +1,20 @@
+/*a
+section{
+    display: flex;
+}*/
+
+/*b
+section{
+    display: inline-flex;
+    flex-direction: column;
+}*/
+
+/*c
+section{
+    display: flex;
+    flex-direction: row-reverse;
+}*/
+
+p{
+    background-color: aqua;  
+}
