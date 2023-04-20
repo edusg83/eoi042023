@@ -1,0 +1,7 @@
+p:nth-child(even) {
+    float: right;
+}
+
+p:nth-child(odd) {
+    float: left;
+}
