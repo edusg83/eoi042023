@@ -1,5 +1,5 @@
 .p2{
-
+    color: white;
 
     animation:mianimacion 1s ease-in-out 0s infinite normal none;
 }
@@ -14,7 +14,7 @@
     50% {
     background: green;
     }
-    100%{
+    100% {
         background: red;
     }
     }
