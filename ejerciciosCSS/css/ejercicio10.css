@@ -4,5 +4,5 @@ p:nth-child(2){
 
 .p4{
     translate: 650px;
-    transform: rotate3d(50, 50, 70 120deg);
+    transform: rotate3d(1, 20, 0 90deg);
 }

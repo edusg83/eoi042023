@@ -1,0 +1,21 @@
+.p2{
+
+
+    animation:mianimacion 1s ease-in-out 0s infinite normal none;
+}
+
+@keyframes mianimacion{
+    0% {
+    background: red;
+    }
+    25% {
+    background: blue;
+    }
+    50% {
+    background: green;
+    }
+    100%{
+        background: red;
+    }
+    }
+    
