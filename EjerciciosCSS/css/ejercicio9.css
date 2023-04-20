@@ -3,5 +3,5 @@
 }
 
 .p4 {
-    background: -webkit-line-break(bottom, red, blue);
+    background: -webkit-linear-gradient(bottom, red, blue);
 }
