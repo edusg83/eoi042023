@@ -1,14 +1,18 @@
 p{
     display: inline-flex;
-    align-self: auto;
+}
+
+p{
+    display: inline-flex;
+    flex-direction: column;
 }
 
 p{
     display: flex;
-    
+    flex-direction:  row-reverse;
+    align-items: flex-end;
 }
 
-/*p{
-    display: flex;
-    justify-content: right;
-}*/
+p{
+    background-color:cornsilk;
+}
