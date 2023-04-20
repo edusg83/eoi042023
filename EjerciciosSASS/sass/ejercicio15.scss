@@ -1,0 +1,38 @@
+$map: (clave1: 1em, clave2: 2em, clave3: 3em);
+$type: azul;
+
+@mixin estilo-nav ($valor-fuente){
+
+    font-size:  map-get($map, $valor-fuente);
+    width: 80%;
+    height: 23px;
+    &:hover { text-decoration:underline;}
+    ul { list-style-type: none; }
+    li {
+    float: left;
+    a { font-weight: bold; }
+    }
+
+}
+    
+.nav1 {
+    @include estilo-nav(clave3);
+}
+
+.nav2 {
+
+    @extend .nav1;
+    color: red;
+
+}
+
+p {
+    @if $type == azul {
+    color: blue;
+    } @else if $type == rojo {
+    color: red;
+    } @else if $type == verde {
+    color: green;
+    } @else {
+    color: black;}
+}

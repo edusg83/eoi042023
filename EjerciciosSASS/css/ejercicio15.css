@@ -1,0 +1,27 @@
+.nav1, .nav2 {
+  font-size: 3em;
+  width: 80%;
+  height: 23px;
+}
+.nav1:hover, .nav2:hover {
+  text-decoration: underline;
+}
+.nav1 ul, .nav2 ul {
+  list-style-type: none;
+}
+.nav1 li, .nav2 li {
+  float: left;
+}
+.nav1 li a, .nav2 li a {
+  font-weight: bold;
+}
+
+.nav2 {
+  color: red;
+}
+
+p {
+  color: blue;
+}
+
+/*# sourceMappingURL=ejercicio15.css.map */
