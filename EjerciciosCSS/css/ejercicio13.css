@@ -9,11 +9,12 @@ section{
     flex-direction: column;
 }*/
 
-/*c
+
 section{
     display: flex;
-    flex-direction: row-reverse;
-}*/
+    flex-direction: column;
+    align-items: flex-end;
+}
 
 p{
     background-color: aqua;  
