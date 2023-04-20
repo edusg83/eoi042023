@@ -1,18 +1,24 @@
 /*APARTADO A*/
-/* #sec1 {
+#sec1 {
     display: flex;
-} */
+}
 
 /*APARTADO B*/
 /* #sec1 {
     display: flex;
     flex-direction: column;
+    
     max-width: 50%;
+    text-align: center;
 } */
 
 /*APARTADO C*/
-#sec1 {
+/* #sec1 {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+} */
+
+p {
+    background: red;
 }
