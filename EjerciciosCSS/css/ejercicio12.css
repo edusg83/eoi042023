@@ -1,0 +1,10 @@
+p:nth-child(even){
+display: inline;
+float:right;
+    
+}
+
+p:nth-child(odd){
+    display: inline;
+    float:left;
+}
