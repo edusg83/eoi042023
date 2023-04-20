@@ -1,0 +1,27 @@
+.p2 {
+    animation: cambio-color-posicion 5s infinite;
+  }
+  
+  @keyframes cambio-color-posicion {
+    0% {
+      background-color: red;
+      transform: translate(0, 0);
+    }
+    25% {
+      background-color: blue;
+      transform: translate(200px, 0);
+    }
+    50% {
+      background-color: green;
+      transform: translate(200px, 200px);
+    }
+    75% {
+      background-color: red;
+      transform: translate(0, 200px);
+    }
+    100% {
+      background-color: red;
+      transform: translate(0, 0);
+    }
+  }
+  
