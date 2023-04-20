@@ -1,0 +1,37 @@
+@keyframes cuadrado {
+    0% {
+        background: red;
+        transform: translate(0px,0px);
+        padding: 20px;
+    }
+
+    25% {
+        background: blue;
+        transform: translate(200px,0px);
+        padding: 40px;
+    }
+
+    50% {
+        background: green;
+        transform: translate(200px,200px);
+        padding: 60px;
+    }
+
+    75% {
+        background: greenyellow;
+        transform: translate(0px,200px);
+        padding: 40px;
+    }
+    100% {
+        background: red;
+        transform: translate(0px,0px);
+        padding: 20px;
+    }
+
+}
+
+.p2{
+    animation: cuadrado 3s linear 0s infinite alternate forwards;
+   
+    margin-right: 1000px ;
+}
