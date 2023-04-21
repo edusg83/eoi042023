@@ -3,3 +3,17 @@
     background-color: #212529;
     color: white;
 }
+
+#id_luna {
+    text-align: center;
+    background-color: #212529;
+    color: black;
+}
+#id_texto1 {
+    text-align: center;
+    color: black;
+}
+
+body {
+    margin-top:0px;
+}
