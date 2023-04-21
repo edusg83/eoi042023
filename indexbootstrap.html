@@ -19,7 +19,12 @@
             max-height: 500px;
             min-height: 500px;
             background-image: url(images/luna.jpeg);
-            background-position-y: 650px;}
+            background-position-y: 650px;
+            background-position-x: center;
+        }
+        #body{
+        background-color: #212529;
+      }
     </style>
     </script>
 </head>
@@ -80,22 +85,23 @@
     <section id="formulario">
         <div style="border-style: solid; border-radius: 1em; border-color: cadetblue;">
             <div class="row justify-content-center">
-                <form>
+                <form class="row justify-content-center"
+                    style="border-style: solid; border-radius: 1em; border-color: orange">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="InputEmail" class="form-label" style="color: white">Email</label>
+                        <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text"> </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Asunto</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Mensaje</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Contactar</button>
-                    <button type="reset" class="btn btn-secondary">Borrar</button>
+                    <div class=" mb-3">
+                            <label for="InputPassword" class="form-label" style="color: white;">Asunto</label>
+                            <input type="text" class="form-control" id="InputPassword">
+                        </div>
+                        <div class="mb-3">
+                            <label for="InputPassword" class="form-label" style="color: white;">Mensaje</label>
+                            <input type="text" class="form-control" id="InputPassword">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Contactar</button>
+                        <button type="reset" class="btn btn-secondary">Borrar</button>
                 </form>
             </div>
         </div>
