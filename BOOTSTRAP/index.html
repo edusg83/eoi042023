@@ -4,35 +4,88 @@
 <head>
     <title>BOOTSTRAP</title>
     <meta charset="utf-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <style>
+        .col-sm-6,
+        .col-sm-12 {
+            background-color: aquamarine;
+        }
+
+        .col-lg-2,
+        col-lg-8 {
+            background-color: rgb(127, 155, 255);
+        }
+    </style>
 </head>
 
 <body>
     <main>
         <section class="container">
             Seccion container, deja margenes a derecha e izquierda
-            <div class="row">
-                <div class="col-sm-12 col-lg-2 "  style="background-color: aquamarine;">
-                    Espacio que ocupa 2 columnas de las 12 en escritorio y 12 en movil
+            <div class="row align-items-end justify-content-between">
+                <div class="col-sm-12 col-lg-2 text-lg-center text-sm-end">
+                    2 en escritorio y 12 en movil
                 </div>
-                <div class="col-sm-12 col-lg-2" style="background-color: aquamarine;">
-                    Espacio que ocupa 2 columnas de las 12 en escritorio y 12 en movil
+                <div class="col-sm-12 col-lg-2 text-lg-center text-sm-end">
+                    2 en escritorio y 12 en movil
                 </div>
-                <div class="col-lg-8" style="background-color: rgb(127, 155, 255);">
-                    Espacio que ocupa 8 columnas de las 12 en escritorio
+                <div class="col-sm-6 col-lg-8 text-lg-center text-sm-end ">
+                    8 en escritorio y 6 en movil
                 </div>
-                <div class="col-lg-2" style="background-color: rgb(127, 155, 255);">
-                    Como ya están ocupadas las 12, cambia de linea(row)
+                <div class="col-sm-6 col-lg-2 text-lg-center text-sm-end">
+                    2 en escritorio(cambia de linea al estar las 12 ocupadas) y 12 en movil
                 </div>
+                <div class="col-sm-6 col-lg-2 invisible">
+                    invisible
+                </div>
+
             </div>
 
-            <br>
-            <br>
         </section>
-        <section class="container-fluid">
-            Seccion container-fluid, se ajusta al 100% del ancho
-          
+        <section class="container-fluid mt-5">
+            Seccion container-fluid, se ajusta al 100% del ancho. seccion invisibles en escritorio
+            <div class="row">
+                <div class="col-lg-2 d-sm-none">
+                    12 en movil
+                </div>
+                <div class="col-lg-2 d-sm-none">
+                    12 en movil
+                </div>
+                <div class="col-lg-8 d-sm-none ">
+                    6 en movil
+                </div>
+                <div class="col-lg-2 d-sm-none">
+                    12 en movil
+                </div>
+                <div class="col-lg-2 d-sm-none">
+                    invisibles en escritorio
+                </div>
+
+            </div>
+
+        </section>
+        <section>
+            <div class="row">
+                <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        cabecera de la tarjeta
+                    </div>
+                    <div class="card-body">
+                        cuerpo de la tarjeta
+                    </div>
+                    <div class="card-footer">
+                        pie de la tarjeta
+                        <button type="button" class="btn btn-success">Success</button>
+                        <button type="button" class="btn btn-info">Info</button>
+                    </div>
+                </div>
+                </div>
+            </div>
         </section>
 
     </main>
