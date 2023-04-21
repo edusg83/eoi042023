@@ -17,40 +17,53 @@
 
 <body>
     <header> </header>
-    <nav>
-        <div id="navLogo">
-            <a id="logo" href="#">Start Bootstrap</a>
-        </div>
-        <div id="navMenu">
-            <a id="home" href="#s1">Home</a>
-            <a id="moon" href="#s2">Moon</a>
-            <a id="images" href="#s3">Images</a>
-            <a id="contact" href="#formulario">Contact</a>
+    <header> </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div>
+                <a class="navbar-brand" id="logo" href="#s1">Start Bootstrap</a>
+            </div>
+            <div>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" id="home" href="#s1">Home</a>
+                        <a class="nav-link" id="moon" href="#s2">Moon</a>
+                        <a class="nav-link" id="images" href="#s3">Images</a>
+                        <a class="nav-link" id="contact" href="#formulario">Contact</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
     <main>
         <article>
-
-            <section id="s1">
-                <h1>Full Width Backgrounds</h1>
-                <p> A single, lightweight helper class allows you to add engaging, full <br>
-                    width background images to sections of your page.</p>
-                <p>The universe is almost 14 billion years old, and, wow! Life had no problem <br>
-                    starting here on Earth!I think it would be inexcusably egocentric of us to <br>
-                     suggest that we're alone in the universe. </p>
+            <section class="container-fluid m-5" id="s1">
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <h1>Full Width Backgrounds</h1>
+                        <p> A single, lightweight helper class allows you to add engaging, full <br>
+                            width background images to sections of your page.</p>
+                        <p>The universe is almost 14 billion years old, and, wow! Life had no problem <br>
+                            starting here on Earth!I think it would be inexcusably egocentric of us to <br>
+                            suggest that we're alone in the universe. </p>
+                    </div>
+                </div>
             </section>
-            <section id="s2">
-
+            <section class="container-fluid m-5" id="s2">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="images/luna.jpeg" alt="">
+                    </div>
+                </div>
             </section>
-            <section id="s3" >
+            <section id="s3">
                 <h1>Engaging Background Images</h1>
                 <p>The background images used in this template are sourced from Unsplash and are <br> open source and
                     free to use.</p>
                 <p>I can't tell you how many people say they were turned off from science because of a science<br>
                     teacher that completely sucked out all the inspiration and enthusiasm they had for the course.</p>
-            </section>
-
-            
+            </section>           
            
             <section id="formulario">
                 <fieldset>
