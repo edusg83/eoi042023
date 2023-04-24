@@ -16,13 +16,18 @@ function valor() {
             case 4: 
                 console.log("CUATRO");
                 break;
-        }
-        
+        }   
     }
 }
 
 valor();
 
-array1.push[3]
+array1.push(3)
+
+valor();
+
+array1.pop()
+array1.pop()
+array1.pop()
 
 valor();
