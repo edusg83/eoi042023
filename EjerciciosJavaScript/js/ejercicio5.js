@@ -1,6 +1,7 @@
 var array1 = [1,2,3,4];
 
 function valor() {
+
     for (var indice of array1) {
 
         switch (indice) {
@@ -17,7 +18,9 @@ function valor() {
                 console.log("CUATRO");
                 break;
         }   
+
     }
+    
 }
 
 valor();
