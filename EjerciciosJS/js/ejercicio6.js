@@ -1,6 +1,6 @@
 var numero = [1, 2, 3, 4];
 for (var num in numero) {
-    var n = numero[i];
+    var n = numero[num];
 
     switch (n) {
         case 1:
