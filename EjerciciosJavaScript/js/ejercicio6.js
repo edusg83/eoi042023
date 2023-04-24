@@ -2,10 +2,9 @@ var array1 = [1,2,3,4];
 
 function valor() {
 
-    for (var i = 0; i < array1.length; i++) {
-        var numero = array1[i];
+    for (var indice of array1) {
 
-        switch (numero) {
+        switch (indice) {
             case 1: 
                 console.log("UNO");
                 break;
@@ -19,10 +18,10 @@ function valor() {
                 console.log("CUATRO");
                 break;
         }   
-
     }
-    
 }
+
+
 
 valor();
 
