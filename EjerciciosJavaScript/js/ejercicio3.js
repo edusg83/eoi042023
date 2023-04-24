@@ -1,5 +1,5 @@
 var cadena1 = "CADENA1",
-    cadena2 = cadena1;
+    cadena2 = "CADENA2";
 
 console.log(cadena1.indexOf("ENA"));
 console.log(cadena1.charAt(cadena1.length-1));
