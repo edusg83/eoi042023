@@ -1,7 +1,8 @@
 var cadena1 = "CADENA1",
     cadena2;
 
-console.log(cadena1.valueOf());
+console.log(typeof(cadena1));
+console.log(typeof(cadena2));
 
 if (cadena2 === undefined)
    console.log("SIN DEFINIR");
