@@ -1,35 +1,27 @@
 function suma(op1, op2) {
-    
-    var resultado = op1 + op2;
 
-    return resultado;
+    return op1 + op2;
 }
 
 function resta(op1, op2) {
 
-    var resultado = op1 - op2;
-
-    if (resultado < 0)
-        return resultado = 0;
+    if (op1 - op2 < 0)
+        return 0;
     else
-        return resultado; 
+        return op1 - op2; 
 }
 
 function multiplicacion(op1, op2) {
-    
-    var resultado = op1 * op2;
 
-    return resultado;
+    return op1 * op2;
 }
 
 function division(op1, op2) {
     
     if (op2 == 0)
         return "Divisior igual a 0";
-
-    var resultado = op1 / op2;
-
-    return resultado;
+    else 
+        return op1 / op2;
 }
 
 console.log(suma(1, 5));
