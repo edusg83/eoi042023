@@ -1,0 +1,7 @@
+console.log("Idioma: "+ navigator.language)
+console.log("Cookies: "+ navigator.cookieEnabled)
+console.log("Nombre app: "+ navigator.appName)
+console.log("Version app: " +navigator.appVersion)
+console.log("Producto: " + navigator.product)
+console.log("UserAgent: "+ navigator.userAgent)
+console.log(navigator)
