@@ -3,7 +3,10 @@ let objetoPadre={
     nombre:null,
     apellidos:null,
     muestraDatos:function(){
-    console.log(this.nombre+' '+this.apellidos+' tiene una edad de '+this.edad);
+        console.log(this.nombre+' '+this.apellidos+' tiene una edad de '+this.edad);
+    },
+    verNombreP:function(){
+        console.log(this.nombre);
     }
    };
 
@@ -32,10 +35,12 @@ let hijo2=Object.create(objetoPadre);
 // hijo1.muestraDatos();
 // hijo2.muestraDatos();
    
+   hijo1.verNombreP();
    hijo1.verNombre();
    hijo1.verApellidos();
    hijo1.verEdad();
 
+   hijo2.verNombreP();
    hijo2.verNombre();
    hijo2.verApellidos();
    hijo2.verEdad();
