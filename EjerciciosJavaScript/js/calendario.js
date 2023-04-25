@@ -4,10 +4,12 @@ function sumardorDias (fecha, meses) {
 
     var MesNuevo = Number(Array[1]) + meses;
 
-    if (Number(MesNuevo) > 12)
+    if (Number(MesNuevo) > 12) {
         MesNuevo = Number(MesNuevo) - 12;
         Anio = Number(Array[2]) + 1;
         Array[2] = Anio;
+    }
+        
     
     Array[1] = MesNuevo;
 
@@ -15,4 +17,5 @@ function sumardorDias (fecha, meses) {
 
 }
 
+console.log(sumardorDias("19-07-2022", 1));
 console.log(sumardorDias("19-07-2022", 8));
