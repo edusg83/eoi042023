@@ -1,6 +1,4 @@
 
-
-
 (function(uno, dos, tres){
     console.log(uno)
     console.log(dos)
