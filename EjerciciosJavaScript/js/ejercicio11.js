@@ -4,7 +4,7 @@ funciones = {
     },
 
     rojo: function colorRojo() {
-        funciones.verde();
+        this.verde();
         console.log("ROJO");
     }
 }
