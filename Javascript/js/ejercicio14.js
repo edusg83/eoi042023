@@ -20,16 +20,16 @@ let hijo2=Object.create(objetoPadre);
 // hijo1.muestraDatos();
 // hijo2.muestraDatos();
    
-    objetoPadre['verEdad']=function(){
-    console.log(this.edad);
-   }
-   
    objetoPadre['verNombre']=function(){
     console.log(this.nombre);
    }
    
    objetoPadre['verApellidos']=function(){
     console.log(this.apellidos);
+   }
+
+   objetoPadre['verEdad']=function(){
+    console.log(this.edad);
    }
    
    
