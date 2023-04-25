@@ -1,5 +1,5 @@
 
-const funciones = {
+var funciones = {
     colorVerde: function() {
       console.log("VERDE");
     },
