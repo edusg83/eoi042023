@@ -32,8 +32,6 @@ let hijo2=Object.create(objetoPadre);
     console.log(this.edad);
    }
    
-   
-
    hijo1.verNombre();
    hijo1.verApellidos();
    hijo1.verEdad();
