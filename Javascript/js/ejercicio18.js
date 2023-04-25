@@ -1,21 +1,10 @@
 //b)
-let headerId=function(){
-    document.getElementById("header");
+let headerId=document.getElementById("headerId");
     console.log(headerId);
-};
 
-headerId;
-
-let headerTag=function(){
-    document.getElementsByTagName("header");
+let headerTag=document.getElementsByTagName("header");
     console.log(headerTag)
-};
 
-headerTag;
-
-let headerQuery=function(){
-    document.querySelector("header");
+let headerQuery=document.querySelector("header");
     console.log(headerQuery);
-}
 
-headerQuery;
