@@ -22,5 +22,7 @@ hijo2.muestraDatos();
 objetoPadre.verEdad = function () {
     console.log(this.edad);
 }
+
+console.log(objetoPadre.isPrototypeOf(hijo1));
 hijo1.verEdad();
 hijo2.verEdad();
