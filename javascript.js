@@ -1,11 +1,15 @@
+let nombre="Pepe";
 
-(function(uno, dos, tres){
-    console.log(uno)
-    console.log(dos)
-    console.log(tres)
-}(1,2,3));
+let obj={
+    nombre:"Paco",
+    saludo: function(){
+        console.log("hola "+ this.nombre);
+    }
+}
 
-(function(){
-    console.log("función anónima");
-})
+let maria ={
+    nombre:"María"
+}
 
+maria.saludo=obj.saludo;
+maria.saludo();
