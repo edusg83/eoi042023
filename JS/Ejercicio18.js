@@ -1,5 +1,5 @@
 let headers = document.getElementsByTagName("header");
-console.log(headers[0]);
+console.log(headers);
 
 let header = document.getElementById("header");
 console.log(header);
