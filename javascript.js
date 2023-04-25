@@ -1,15 +1,6 @@
-let nombre="Pepe";
-
-let obj={
-    nombre:"Paco",
-    saludo: function(){
-        console.log("hola "+ this.nombre);
-    }
+try {
+    aleeeert("Hola mundo");
 }
-
-let maria ={
-    nombre:"María"
+catch(err){
+    document.getElementById("ejemplo").innerHTML=err.message;
 }
-
-maria.saludo=obj.saludo;
-maria.saludo();
