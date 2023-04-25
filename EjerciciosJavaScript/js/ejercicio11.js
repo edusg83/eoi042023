@@ -1,13 +1,13 @@
 funciones = {
-    colorVerde: function() {
+    verde: function colorVerde() {
         console.log("VERDE");
     },
 
-    colorRojo: function() {
+    rojo: function colorRojo() {
+        funciones.verde();
         console.log("ROJO");
     }
 }
 
-funciones.colorRojo = funciones.colorVerde;
-funciones.colorRojo();
+funciones.rojo();
 
