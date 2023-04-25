@@ -7,6 +7,18 @@ let objetoPadre={
     }
    };
 
+   objetoPadre['verNombre']=function(){
+    console.log(this.nombre);
+   }
+   
+   objetoPadre['verApellidos']=function(){
+    console.log(this.apellidos);
+   }
+
+   objetoPadre['verEdad']=function(){
+    console.log(this.edad);
+   }
+
 let hijo1=Object.create(objetoPadre);
     hijo1.edad=21;
     hijo1.nombre='Antonio';
@@ -20,18 +32,6 @@ let hijo2=Object.create(objetoPadre);
 // hijo1.muestraDatos();
 // hijo2.muestraDatos();
    
-   objetoPadre['verNombre']=function(){
-    console.log(this.nombre);
-   }
-   
-   objetoPadre['verApellidos']=function(){
-    console.log(this.apellidos);
-   }
-
-   objetoPadre['verEdad']=function(){
-    console.log(this.edad);
-   }
-   
    hijo1.verNombre();
    hijo1.verApellidos();
    hijo1.verEdad();
@@ -39,3 +39,4 @@ let hijo2=Object.create(objetoPadre);
    hijo2.verNombre();
    hijo2.verApellidos();
    hijo2.verEdad();
+
