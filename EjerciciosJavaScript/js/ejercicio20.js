@@ -1,6 +1,9 @@
 (function() {
     
-    var parrafo = document.getElementsByTagName("p");
-    parrafo[0].id = "parrafo1";
+    var elem = document.createElement("p");
+    elem.innerHTML = "Este texto está añadido dinámicamente";
+    document.body.appendChild(elem);
+    
+    elem.id = "parrafo1";
 
 }());
