@@ -22,7 +22,7 @@ function operar(op) {
 
 function calcular() {
 
-    let calculo = (Number(memoria)<0 && operador === "-")? eval(pantalla +memoria): eval(pantalla + operador +memoria)
+    let calculo = (Number(memoria)<0 && operador === "-")? eval(pantalla +memoria): eval( memoria+ operador +pantalla)
     elementoPantalla.innerHTML = calculo
     memoria = "";
     pantalla = "";
