@@ -4,6 +4,10 @@ let param1;
 let param2;
 let operacion;
 
+function boton(dato){
+    let aux=document.getElementById("visorValor");
+}
+
 //division
 function dividir (param1, param2){
     return param1/param2;
