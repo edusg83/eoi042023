@@ -75,5 +75,3 @@ var operacion;
 var operadores = [2];
 operadores[0] = undefined
 operadores[1] = undefined
-//alert("Primer operador " + operadores[0])
-//alert("Segundo operador " + operadores[1])
