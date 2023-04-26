@@ -16,17 +16,17 @@ function getMultiplicacion(op1, op2) {
 
 function getDivision(op1, op2) {
     if (op2 == 0)
-        return "Divisior igual a 0";
+        return "Error";
     else 
         return op1 / op2;
 }
 
 function addOperador(boton) {
 
-    if (operadores[1] === undefined) {
+    if (operadores[0] === undefined) {
+        operadores[0] = Number(boton.value)
+    } else if (operadores[1] === undefined) {
         operadores[1] = Number(boton.value)
-    } else if (operadores[2] === undefined) {
-        operadores[2] = Number(boton.value)
     } else {
         alert("Ya has introducido dos operadores")
     }
@@ -37,26 +37,43 @@ function setOperacion(op) {
 }
 
 function getResultado() {
+
     switch(operacion){
         case "+":
-            resultado = getSuma(operadores[1], operadores[2]);
-            alert(resultado);
+            display(getSuma(operadores[0], operadores[1]));
             break;
         case "-":
-            resultado = getResta(operadores[1], operadores[2]);
-            alert(resultado);
+            display(getResta(operadores[0], operadores[1]))
             break;
         case "x":
-            resultado = getMultiplicacion(operadores[1], operadores[2]);
-            alert(resultado);
+            display(getMultiplicacion(operadores[0], operadores[1]));
             break;
         case "/":
-            resultado = getMultiplicacion(operadores[1], operadores[2]);
-            alert(resultado);
+            display(getDivision(operadores[0], operadores[1]))
             break;
     }
   
 }
 
+function display(resultado) {
+    
+    operadores[0] = undefined;
+    operadores[1] = undefined;
+
+    document.getElementById('display').innerHTML = resultado;
+
+}
+
+function reset () {
+    operadores[0] = undefined;
+    operadores[1] = undefined;
+    operacion = "";
+    document.getElementById('display').innerHTML = "";
+}
+
 var operacion;
 var operadores = [2];
+operadores[0] = undefined
+operadores[1] = undefined
+//alert("Primer operador " + operadores[0])
+//alert("Segundo operador " + operadores[1])

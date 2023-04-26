@@ -7,69 +7,40 @@
     
     
 </head>
-<body class="text-center mx-0"> 
-    <header id="cabecera">CASIO 300</header>
-    <main>
+<body class="offset-4 col-4 text-center mt-2 border border-dark rounded mx"> 
+   
+    <main class="mx-0 px-0">
+        <h6 id="cabecera">CASIO 3000</h6>
         <div class="container-fluid">
-            <div class="row">
-                <div class="offset-4 col-4">
-                    <textarea name="" id="" cols="30" rows="1"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="offset-4 col-1">
-                    <button value='7' onclick="addOperador(this)">7</button>
-                </div>
-                <div class="col-1">
-                    <button value="8" onclick="addOperador(this)">8</button>
-                </div>
-                <div class="col-1">
-                    <button value="9" onclick="addOperador(this)">9</button>
-                </div>
-                <div class="col-1">
-                    <button value="/" onclick="setOperacion(this)">/</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="offset-4 col-1">
-                    <button value="4" onclick="addOperador(this)">4</button>
-                </div>
-                <div class="col-1">
-                    <button value="5" onclick="addOperador(this)">5</button>
-                </div>
-                <div class="col-1 ">
-                    <button value="6" onclick="addOperador(this)">6</button>
-                </div>
-                <div class="col-1 ">
-                    <button value="x" onclick="setOperacion(this)">X</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="offset-4 col-1">
-                    <button value="1" onclick="addOperador(this)">1</button>
-                </div>
-                <div class="col-1">
-                    <button value="2" onclick="addOperador(this)">2</button>
-                </div>
-                <div class="col-1 ">
-                    <button value="3" onclick="addOperador(this)">3</button>
-                </div>
-                <div class="col-1 ">
-                    <button value="-" onclick="setOperacion(this)">-</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="offset-4 col-1">
-                    <button value="0" onclick="addOperador(this)">0</button>
-                </div>
-                <div class="col-1">
-                    <button>.</button>
-                </div>
-                <div class="col-1">
-                    <button value="=" onclick="getResultado(this)">=</button>
-                </div>
-                <div class="col-1">
-                    <button value="+" onclick="setOperacion(this)">+</button>
+            <div class="justify-content-center mb-2">
+                <div class="offset-4 col-4 justify-content-center">
+                    <div class="row">
+                        <textarea class = "col-12 text-center" id="display" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="row">
+                        <button value='7' class = "col-3" onclick="addOperador(this)">7</button>
+                        <button value="8" class = "col-3" onclick="addOperador(this)">8</button>
+                        <button value="9" class = "col-3" onclick="addOperador(this)">9</button>
+                        <button value="/"  class = "col-3" onclick="setOperacion(this)">/</button>
+                    </div>
+                    <div class="row">
+                        <button value="4"  class = "col-3" onclick="addOperador(this)">4</button>
+                        <button value="5"  class = "col-3" onclick="addOperador(this)">5</button>
+                        <button value="6"  class = "col-3" onclick="addOperador(this)">6</button>
+                        <button value="x"  class = "col-3" onclick="setOperacion(this)">X</button>
+                    </div>
+                    <div class="row">
+                        <button value="1"  class = "col-3" onclick="addOperador(this)">1</button>
+                        <button value="2"  class = "col-3" onclick="addOperador(this)">2</button>
+                        <button value="3"  class = "col-3" onclick="addOperador(this)">3</button>
+                        <button value="-"  class = "col-3" onclick="setOperacion(this)">-</button>
+                    </div>
+                    <div class="row">
+                        <button value="0"  class = "col-3" onclick="addOperador(this)">0</button>
+                        <button  class = "col-3" onclick="reset(this)">C</button>
+                        <button value="="  class = "col-3" onclick="getResultado(this)">=</button>
+                        <button value="+"  class = "col-3" onclick="setOperacion(this)">+</button>
+                    </div>
                 </div>
             </div>
         </div>
