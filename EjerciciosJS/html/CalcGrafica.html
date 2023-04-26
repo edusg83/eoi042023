@@ -10,6 +10,7 @@
         #pantalla, #calculadora{
             border-radius: 20px;
             border: 2px solid gray;   
+            overflow: hidden;
         }
         button{
             border-radius: 10px;
@@ -33,32 +34,32 @@
     <main>
         <section class="container mt-5">
             <div class="row justify-content-center">
-                <div id="calculadora" class="col-3 row">
+                <div id="calculadora" class="col-3">
                     <div class="row mt-4 justify-content-center me-0 ms-0">
-                        <p id="pantalla" class="col-10 text-end pt-1 pb-1">0000000</p></div>
+                        <p id="pantalla" class="col-10 text-end pt-1 pb-1">-GO NUMBERS-</div>
                     <div class="row justify-content-center m-0">
                         <button id="7" class="col-2 m-1" onclick="anyadirNumero(7)">7</button>
-                        <button id="8" class="col-2 m-1">8</button>
-                        <button id="9" class="col-2 m-1">9</button>
-                        <button id="div" class="col-2 m-1">÷</button>
+                        <button id="8" class="col-2 m-1" onclick="anyadirNumero(8)">8</button>
+                        <button id="9" class="col-2 m-1" onclick="anyadirNumero(9)">9</button>
+                        <button id="div" class="col-2 m-1" onclick="operar('/')">÷</button>
                     </div>
                     <div class="row justify-content-center m-0">
-                        <button id="4" class="col-2 m-1">4</button>
-                        <button id="5" class="col-2 m-1">5</button>
-                        <button id="6" class="col-2 m-1">6</button>
-                        <button id="multi" class="col-2 m-1">X</button>
+                        <button id="4" class="col-2 m-1" onclick="anyadirNumero(4)">4</button>
+                        <button id="5" class="col-2 m-1" onclick="anyadirNumero(5)">5</button>
+                        <button id="6" class="col-2 m-1" onclick="anyadirNumero(6)">6</button>
+                        <button id="multi" class="col-2 m-1" onclick="operar('*')">X</button>
                     </div>
                     <div class="row justify-content-center m-0">
-                        <button id="7" class="col-2 m-1">1</button>
-                        <button id="8" class="col-2 m-1">2</button>
-                        <button id="9" class="col-2 m-1">3</button>
-                        <button id="menos" class="col-2 m-1">-</button>
+                        <button id="7" class="col-2 m-1" onclick="anyadirNumero(1)">1</button>
+                        <button id="8" class="col-2 m-1" onclick="anyadirNumero(2)">2</button>
+                        <button id="9" class="col-2 m-1" onclick="anyadirNumero(3)">3</button>
+                        <button id="menos" class="col-2 m-1" onclick="negativo('-')">-</button>
                     </div>
                     <div class="row justify-content-center m-0 mb-4 ">
-                        <button id="0" class="col-2 m-1">0</button>
-                        <button id="punto" class="col-2 m-1">.</button>
-                        <button id="igual" class="col-2 m-1">=</button>
-                        <button id="mas" class="col-2 m-1">+</button>
+                        <button id="0" class="col-2 m-1" onclick="anyadirNumero(0)">0</button>
+                        <button id="punto" class="col-2 m-1" onclick="anyadirNumero('.')">.</button>
+                        <button id="igual" class="col-2 m-1" onclick="calcular('=')">=</button>
+                        <button id="mas" class="col-2 m-1" onclick="operar('+')">+</button>
                     </div>
                 </div>
             </div>
