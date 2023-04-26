@@ -7,7 +7,7 @@
 
     var boton = document.createElement("button");
     boton.innerHTML = "Aplicar estilo a párrafo";
-    document.body.appendChild(boton);
+    parrafo.appendChild(boton);
 
 
     boton.onclick = function() {
