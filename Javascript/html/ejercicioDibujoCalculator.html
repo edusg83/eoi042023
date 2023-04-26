@@ -9,48 +9,53 @@
     <script src="C:\Users\Edu\Desktop\EOI\2023\FULLSTACK_JAVA\TEMARIO\EDUARDO_SEVERÁ_GOSALVEZ\eduardo_severa_gosalvez_github\eoi042023\Javascript\js\ejercicioDibujoCalculator.js"></script>
     <title>ejercicioDibujoCalculator</title>
 </head>
+<style>
+    #estructura{
+        background-color: #212A3E;
+    }
+    #botones{
+        background-color: #F1F6F9;
+    }
+
+    button:active {
+    border: 2px solid #FF0000;
+    padding: 2px;
+    }
+</style>
 <body>
     <section id="estructura" class="container mt-2 mb-2" style="border-style: solid; border-radius: 0.5em; height: 225px; width: 300px;">
         <section id="pantalla" class="container mt-2 mb-2" style="border-style: solid; border-radius: 0.5em;">
-            <div class="col-12 text-sm-right ml-1 mr-1" >
+            <div class="row justify-content-end ml-1 mr-1" >
                 VISOR DE OPERACIÓN
             </div>
-            <div class="col-12 justify-content-end ml-1 mr-1" >
+            <div class="row justify-content-end ml-1 mr-1" >
                 RESULTADO
             </div>
         </section>
         <section id="botones" class="container justify-content-center m-2">
             <section id="linea1" class="row justify-content-center">
-                <div class="col-2 m-1">
-                    <button type="button" class="btn btn-secondary text-center">7</button>
-                </div>
-                <div class="col-2 m-1">
-                    <button type="button" class="btn btn-secondary text-center">8</button>
-                </div>
-                <div class="col-2 m-1">
-                    <button type="button" class="btn btn-secondary text-center">9</button>
-                </div>
-                <div class="col-4 m-1">
-                    <button type="button" class="btn btn-secondary text-center">/</button>
-                </div>
+                <div type="button" value="input" class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">7</div>
+                <div type="button" value="input" class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">8</div>
+                <div type="button" value="input" class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">9</div>
+                <div type="button" value="input" class="col-4 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">/</div>
             </section>
             <section id="linea2" class="row justify-content-center">
-                <div class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">4</div>
-                <div class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">5</div>
-                <div class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">6</div>
-                <div class="col-4 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">*</div>
+                <div type="button" value="input" class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">4</div>
+                <div type="button" value="input" class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">5</div>
+                <div type="button" value="input" class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">6</div>
+                <div type="button" value="input" class="col-4 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">*</div>
             </section>
             <section id="linea3" class="row justify-content-center">
-                <div class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">1</div>
-                <div class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">2</div>
-                <div class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">3</div>
-                <div class="col-4 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">-</div>
+                <div type="button" value="input" class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">1</div>
+                <div type="button" value="input" class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">2</div>
+                <div type="button" value="input" class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">3</div>
+                <div type="button" value="input" class="col-4 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">-</div>
             </section>
             <section id="linea4" class="row justify-content-center">
-                <div class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">0</div>
-                <div class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">.</div>
-                <div class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">=</div>
-                <div class="col-4 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">+</div>
+                <div type="button" value="input" class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">0</div>
+                <div type="button" value="input" class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">.</div>
+                <div type="button" value="input" class="col-2 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">=</div>
+                <div type="button" value="input" class="col-4 m-1 text-center" style="border-style: solid; border-radius: 0.5em;">+</div>
             </section>
             
         </section>

@@ -1,3 +1,9 @@
+let visorOperacion=0000;
+let visorValor=null
+let param1;
+let param2;
+let operacion;
+
 //division
 function dividir (param1, param2){
     return param1/param2;
