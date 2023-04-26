@@ -28,7 +28,5 @@ botonElem.onclick = function(){
     }else{
         parrafoElem.className = ""
         botonElem.innerHTML = "Aplicar estilo a parrafo"
-        parrafoElem.classList.remove("parrafo")
-        parrafoElem.classList.remove("aplicado")
     }
 }
