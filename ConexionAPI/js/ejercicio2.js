@@ -14,7 +14,7 @@ fetch(request)
             <th>direccion</th>
         </tr>
     </thead>
-    </tbody>`;
+    <tbody>`;
 
     let finTabla = `<tbody>
                     </table>`;
