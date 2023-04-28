@@ -1,26 +1,37 @@
 
-const request = new Request('https://j4jjw.mocklab.io/usersDataList');
-const URL = 
-let tabla=`<table id="dataTable" class="table">
-<thead>
-    <tr>
-        <th>Id</th>
-        <th>Tarjeta</th>
-        <th>Propietario</th>
-    </tr>
-</thead>
-<tbody>`;
-let finTabla=`</tbody></table>`;
+const request = new Request("https://j4jjw.mocklab.io/usersDataList");
 
-let filas=``;
+fetch(request)
+.then(response => response.json())
+.then(data => {
 
-arrayEjemplo.forEach(item => {
-    filas+=`<tr>
-    <td>${item.id}</td>
-    <td>${item.tarjeta}</td>
-    <td>${item.propietario}</td>
-    </tr>`;
+    arrayData = data.arrayUsuarios;
+
+    let tabla = `<table id="dataTable">
+    <thead>
+        <tr>
+            <th>nombre</th>
+            <th>apellidos</th>
+            <th>direcciones</th>
+        </tr>
+    </thead>
+    <tbody>`;
+
+    let finTabla = `</tbody>
+                    </table>`;
+
+    let filas = ``;
+
+    arrayData.forEach(element => {
+        
+        filas += `
+        <tr>
+            <td>${element.nombre}</td>
+            <td>${element.apellidos}</td>
+            <td>${element.direcciones}</td>
+        </tr>`
+    });
+
+    tabla += filas + finTabla;
+    document.getElementById("resultados").innerHTML = tabla;
 });
-
-tabla=tabla+filas+finTabla;
-document.getElementById("resultados").innerHTML=tabla;
