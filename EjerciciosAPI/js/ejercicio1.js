@@ -8,7 +8,7 @@ let array = [];
 
 fetch(request)
 .then(respuesta => respuesta.json())
-.then(data => { 
+.then(data => {  //data = respuesta.json() y seguidamente hace la funcion entre {} 
     console.log(data);
     console.log(data.arrayUsuarios);
     arrayData=data.arrayUsuarios;
