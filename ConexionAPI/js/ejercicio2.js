@@ -16,7 +16,7 @@ fetch(request)
     </thead>
     <tbody>`;
 
-    let finTabla = `<tbody>
+    let finTabla = `</tbody>
                     </table>`;
 
     let filas = ``;
