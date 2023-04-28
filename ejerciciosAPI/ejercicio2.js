@@ -12,6 +12,17 @@ fetch(request)
 
     console.log(data);
     console.log(data.arrayUsuarios);
-    arrayData=data.arrayUsuarios;
-    
+    arrayData=data.arrayUsuarios;    
 })
+
+let table='<table id="dataTable">
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Target</th>
+        <th>Propietario</th>
+    </tr>
+</thead>
+<tbody>';
+    let finTable=""
+</tbody>
