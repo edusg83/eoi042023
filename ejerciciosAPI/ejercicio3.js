@@ -10,8 +10,11 @@ fetch(request)
 .then(response => response.json())
 .then(data => {
 
-    console.log(data);
-    console.log(data.arrayUsuarios);
-    arrayData=data.arrayUsuarios;    
+    arrayData=data.arrayUsuarios;
+
+
+      
 })
+
+
 
