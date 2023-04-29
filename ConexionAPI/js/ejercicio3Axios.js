@@ -1,10 +1,14 @@
-const request = new Request("https://j4jjw.mocklab.io/usersDataList");
+const headers = {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+}
 
-fetch(request)
-.then(response => response.json())
-.then(data => {
+const urlUsers = 'https://j4jjw.mocklab.io/usersDataList';
 
-    arrayData = data.arrayUsuarios;
+axios.get(urlUsers, {headers})
+.then((respuestaUsuarios) => {
+
+    let arrayData = respuestaUsuarios.data.arrayUsuarios;
 
     arrayData.forEach(element => {
         
