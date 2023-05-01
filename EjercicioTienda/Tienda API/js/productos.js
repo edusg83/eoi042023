@@ -4,7 +4,7 @@ const headers = {
 };
 
 let pagina = 0;
-let tamanyo = 5;
+let tamanyo = 10;
 
 //creación del listado del productos de la bd
 function obtenerProductos() {
@@ -22,11 +22,11 @@ function obtenerProductos() {
                 <td class="botoneraEditarBorrar d-flex">
                     <button type="button" class="btn" data-bs-toggle="modal"
                         data-bs-target="#detallesModal" onclick="actualizarModalProducto(${element.id})">
-                        <img src="../image/pencil.svg" alt="botod de añadir" width="20px"/>
+                        <img src="../image/pencil.svg" alt="botod de añadir" width="20px" title = "modificar"/>
                     </button>
                     <button type="button" class="btn" data-bs-toggle="modal"
                         data-bs-target="#modalBorrar" onclick="actualizarModalBorrar(${element.id})">
-                        <img src="../image/trash.svg" alt="botod de añadir" width="20px" />
+                        <img src="../image/trash.svg" alt="botod de añadir" width="20px" title = "borrar"/>
                     </button></td></tr>`
                     document.getElementById("contenidoTabla").innerHTML += filasContenido;
             });

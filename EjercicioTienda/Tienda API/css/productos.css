@@ -1,10 +1,8 @@
 #marcoTabla {
     max-width: 800px;
-
 }
 
-#tituloTabla,
-#detallesModal {
+#tituloTabla,#detallesModal {
     font-size: 18px;
 }
 
@@ -20,11 +18,9 @@
     0% {
         opacity: 1;
     }
-
     100% {
         opacity: 0;
     }
-
 }
 
 
