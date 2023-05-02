@@ -98,7 +98,7 @@ function modificarProducto () {
     console.log("ID: " + idProducto + " y Nombre: " + formulario.name.value)
     console.log(dataRequest.name)
 
-    axios.put("http://ligafalm.eu:28100/products", dataRequest, {headers})
+    axios.put('http://ligafalm.eu:28100/products/' + idProducto, dataRequest, {headers})
     .then((respuesta)=>{
         console.log(respuesta.data);
         window.location.assign('productos.html');
