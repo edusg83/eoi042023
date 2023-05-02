@@ -5,7 +5,7 @@ let enviar = document.getElementById("enviar"),
     provincia = document.getElementById("provincia");
 
 
-nombre.addEventListener("keypress", function (evt) {
+nombre.addEventListener("keypress", function () {
     error.innerHTML = ""
 });
 
