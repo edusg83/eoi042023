@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Calculadora</title>
+    <form class="calculadora">
+    <link rel="stylesheet" href="calculadora.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="Calculadora.js"></script>
+  </head>
+
+  <form class="calculadora">
+    <input type="button" value="7" onclick="agregarNumero('7')" class="btn btn-secondary">
+    <input type="button" value="8" onclick="agregarNumero('8')" class="btn btn-secondary">
+    <input type="button" value="9" onclick="agregarNumero('9')" class="btn btn-secondary">
+    <input type="button" value="÷" onclick="operacion('/')" class="btn btn-primary">
+
+    <input type="button" value="4" onclick="agregarNumero('4')" class="btn btn-secondary">
+    <input type="button" value="5" onclick="agregarNumero('5')" class="btn btn-secondary">
+    <input type="button" value="6" onclick="agregarNumero('6')" class="btn btn-secondary">
+    <input type="button" value="X" onclick="operacion('*')" class="btn btn-primary">
+
+    <input type="button" value="1" onclick="agregarNumero('1')" class="btn btn-secondary">
+    <input type="button" value="2" onclick="agregarNumero('2')" class="btn btn-secondary">
+    <input type="button" value="3" onclick="agregarNumero('3')" class="btn btn-secondary">
+    <input type="button" value="-" onclick="operacion('-')" class="btn btn-primary">
+    
+    <input type="button" value="0" onclick="agregarNumero('0')" class="btn btn-secondary">
+    <input type="button" value="." onclick="agregarNumero('.')" class="btn btn-secondary">
+    <input type="button" value="=" onclick="calcular()" class="btn btn-success">
+    <input type="button" value="+" onclick="operacion('+')" class="btn btn-primary">
+      
+      
+     
+    
+    
+
+
+    
+    <input type="text" id="resultado" class="form-control">
+  </form>
