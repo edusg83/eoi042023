@@ -124,20 +124,6 @@ function previoCrear () {
 
     document.getElementById("selectProduct").innerHTML = option;
 
-    axios.get('http://ligafalm.eu:28100/products?page=0&size=100', {headers})
-    .then((respuesta) => {
-
-        let arrayData = respuesta.data;
-
-        let option = ``;
-
-        arrayData.forEach(element => {
-            
-            option += `<option value="${element.code}">${element.name}</option>`
-    });
-
-    document.getElementById("selectProduct").innerHTML = option;
-
 })
 .catch((error)=>{console.log(error)});
 }
