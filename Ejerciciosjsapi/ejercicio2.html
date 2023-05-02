@@ -4,41 +4,26 @@
     <title>Tabla de Usuarios</title>
   </head>
   <body>
-    <table id="users-table">
+    <table id="usersTable">
       <thead>
         <tr>
-          <th>ID</th>
           <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Email</th>
-          <th>Edad</th>
+          <th>Apellidos</th>
+          <th>Direccion</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+      </tbody>
     </table>
     <script>
-      fetch('https://j4jjw.mocklab.io/users', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-        .then(response => response.json())
-        .then(data => {
-          const usersTable = document.querySelector('#users-table tbody');
-          data.forEach(user => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-              <td>${user.id}</td>
-              <td>${user.firstName}</td>
-              <td>${user.lastName}</td>
-              <td>${user.email}</td>
-              <td>${user.age}</td>
-            `;
-            usersTable.appendChild(row);
-          });
-        })
-        .catch(error => console.error(error));
+      const request = new Request('https://j4jjw.mocklab.io/users');
+      const URL = request.url;
+      const method = request.method;
+      const credentials = request.credentials;
+
+      fetch(request)
+        .then(response=>response.json())
+        .then(data=>console.log(data));
     </script>
   </body>
 </html>
