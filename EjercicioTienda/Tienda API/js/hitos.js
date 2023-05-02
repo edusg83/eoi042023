@@ -41,11 +41,14 @@ function obtenerHitos() {
                 <td >${element.end.split('T')[0]}</td>
                 <td >${element.progress}</td>
                 <td class="d-flex justify-content-end">
+                    <button type="button" class="btn ms-0 ps-0">
+                    <img src="../image/search.svg" alt="boton de buscar" width="20px"/>
+                    </button>
                     <button type="button" class="btn ms-0 ps-0" data-bs-toggle="modal"
                         data-bs-target="#detallesModal" onclick="actualizarModalProducto(${element.id})">
                         <img src="../image/pencil.svg" alt="botod de añadir" width="20px"/>
                     </button>
-                    <button type="button" class="btn  me-1" data-bs-toggle="modal"
+                    <button type="button" class="btn ms-0 ps-0" data-bs-toggle="modal"
                         data-bs-target="#modalBorrar" onclick="actualizarModalBorrar(${element.id})">
                         <img src="../image/trash.svg" alt="botod de añadir" width="20px" />
                     </button></td></tr>`

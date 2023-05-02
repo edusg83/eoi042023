@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/hitos.css">
+    <link rel="stylesheet" href="../css/objetivos.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -20,33 +20,156 @@
             <a class="navbar-brand" id="logo" href="#">Home</a>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link"  href="hitos.html">Hito</a>
+                    <a class="nav-link" href="hitos.html">Hito</a>
                     <a class="nav-link active" aria-current="page" href="objetivos.html">Objetivos</a>
                     <a class="nav-link" href="transacciones.html">Transacciones</a>
-                    <a class="nav-link"  href="productos.html">Productos</a>
+                    <a class="nav-link" href="productos.html">Productos</a>
                 </div>
             </div>
         </div>
     </nav>
-<main>
-    <!-- seccion donde se listan los productos de la bd -->
+    <main>
+<!-- seccion donde se listan los productos de la bd -->
 <div id="wrapper">
     <div id="marcoTabla" class="container-fluid align-content-center mt-5">
 
         <!-- cabecera de la pagina-->
-        <h1 class="h3 mb-2 text-gray-800">Hitos</h1>
-        <p class="mb-4">A través de esta página puedes ver todos los hitos existentes,
-            modificar o borrar uno existente y crear uno nuevo. Los hitos pueden no estar asociados
-            a objetivos o tener varios objetivos asociados al mismo hito.
+        <h1 class="h3 mb-2 text-gray-800">Objetivos</h1>
+        <p class="mb-4">A través de esta página puedes ver todos los objetivos existentes,
+            modificar o borrar uno existente y crear uno nuevo. Los objetivos pueden o no estar asociados
+            a una o varias transacciones.
         </p>
+            <!-- Tabla de productos -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex justify-content-between">
+                    <h6 id="tituloTabla" class=" ms-2 font-weight-bold text-primary pt-2 pb-0">Listado de Objetivos
+                    </h6>
+                    <p id="alertaExito"></p>
+                    <div>
+                        <button type="button" class="btn btn-link pb-1" data-bs-toggle="modal"
+                            data-bs-target="#detallesModal" onclick="obtenerAsignaciones()">
+                            <img src="../image/plus-circle.svg" alt="boton de añadir" title="añadir hito" />
+                            </th>
+                        </button>
+                        <button type="button" class="btn btn-link pb-1 me-3 ps-0" onclick="obtenerObjetivos()">
+                            <img src="../image/sync.svg" alt="boton de actualizar" title="actualizar tabla" /></th>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                    <th>Asignación</th>
+                                    <th>Progreso</th>
+                                    <th>Nºtransacciones</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="contenidoTabla"> </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="6">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="form-group d-flex align-items-center ms-2">
+                                                <label for="paginador">Mostrar </label>
+                                                <select class="form-control ms-2 me-2 p-0 pe-2 ps-2  align-items-center"
+                                                    id="paginador" onchange="paginar()">
+                                                    <option>5</option>
+                                                    <option selected>10</option>
+                                                    <option>15</option>
+                                                    <option>20</option>
+                                                    <option>30</option>
+                                                </select> resultados
+                                            </div>
+                                            <div>
+                                                <i id="paginaActual">página: 1</i>
+                                                <button type="button" class="btn btn-link m-0 ms-4"
+                                                    onclick="paginaPrevia()">
+                                                    <img src="../image/chevron-left.svg" alt="boton de página previa"
+                                                        title="página previa" />
+                                                </button>
+
+                                                <button type="button" class="btn btn-link m-0"
+                                                    onclick="paginaSiguiente()">
+                                                    <img src="../image/chevron-right.svg"
+                                                        alt="boton de página siguiente" title="página siguiente" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-   
-</main>
-<footer class="py-4 bg-dark mt-5">
-    <p class="m-0 text-center text-white">G.O Administration S.A</p>
-</footer>
+<!--modal detalles producto, usado para crear o modificar-->
+<div id="detallesModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="tituloModalDetalles" class="modal-title ms-4">Crear un hito</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" 
+                onclick="limpiarModalDetalles()"></button>
+            </div>
+            <div class="modal-body  m-3  ms-4">
+                <P id="descripcionModalDetalles" class="mb-4">Añade un nuevo hito a la base de datos</P>
+                <form class="m-3">
+                    <div class="d-flex flex-lg-row flex-sm-column">
+                        <div class="form-group d-flex">
+                            <label for="FechaInicio" id="etiquetaFechaInicio" class=" me-3">Nombre: </label>
+                            <input type="text" class="form-control form-control-sm me-4 " id="nombreProducto">                       
+                         </div>
+                        <div class="form-group d-flex">
+                            <label for="FechaFinal" id="etiquetaFechaFinal" class="me-3">Descripción: </label>
+                            <input type="text" class="form-control form-control-sm pe-5 ps-5 " id="nombreProducto"> 
+                         </div>
+                    </div>
+                    <div id="casillasExtraActualizar">
+                    <div class="d-flex flex-lg-row flex-sm-column mt-4">
+                        <div class="form-group d-flex" >
+                            <label for="nombreProducto" id="etiquetaNombreProducto" class="me-4">Usuario asignado: </label>
+                            <select class="custom-select form-control-sm me-4" id="nombreProducto">
+                                <option value="assssssasas">asasaaaaaaaaa</option>
+                            </select>
+                        </div>
+                        <div class="form-group d-flex">
+                            <label for="nombreProducto" id="etiquetaNombreProducto" class="me-4">Hito asignado: </label>
+                            <select class="custom-select form-control-sm me-4" id="nombreProducto">
+                                <option value="assssssasas">asasaaaaaaaaa</option>
+                            </select>
+                        </div></div>
+                 
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <div>
+
+                </div>
+                <div>
+                    <button type="submit" id="guardarModalDetalles" class="btn btn-primary"
+                        onclick="guardarHito()">Guardar</button>
+                    <button type="button" id="cerrarModalDetalles" class="btn btn-secondary"
+                        onclick="limpiarModalDetalles()" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </main>
+    <footer class="py-4 bg-dark mt-5">
+        <p class="m-0 text-center text-white">G.O Administration S.A</p>
+    </footer>
 </body>
-<script src="../js/hitos.js"></script>
+<script src="../js/objetivos.js"></script>
 
 </html>
