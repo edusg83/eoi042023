@@ -34,11 +34,11 @@ axios.get(urlProductos, {headers})
             <td>${element.description}</td>
             <td>${element.code}</td>
             <td>
-                <button class="btn btn-primary btn-circle">
-                    <i  data-bs-toggle="modal" data-bs-target="#modalBorrar" onclick="previoBorrar(${element.id})" class="bi bi-trash"></i>
+                <button data-bs-toggle="modal" data-bs-target="#modalBorrar" class="btn btn-primary btn-circle">
+                    <i onclick="previoBorrar(${element.id})" class="bi bi-trash"></i>
                 </button>
                 <button class="btn btn-primary btn-circle">
-                    <i  data-bs-toggle="modal" data-bs-target="#modalModificar" onclick="previoModificar(${element.id})" class="bi bi-pencil"></i>
+                    <i data-bs-toggle="modal" data-bs-target="#modalModificar" onclick="previoModificar(${element.id})" class="bi bi-pencil"></i>
                 </button>
             </td>
         </tr>`
@@ -60,7 +60,8 @@ function previoBorrar (id) {
 function borrarProducto() {
     console.log("Dentro de la funcion borrar, idProducto = " + idProducto);
     axios.delete('http://ligafalm.eu:28100/products/' + idProducto)
-    .then();
+    .then()
+    .catch((error)=>{console.log(error)});
 }
 
 function crearProducto() {
@@ -76,7 +77,10 @@ function crearProducto() {
     console.log(dataRequest.name)
 
     axios.post("http://ligafalm.eu:28100/products", dataRequest, {headers})
-    .then();
+    .then((respuesta)=>{
+        console.log(respuesta.data);
+        window.location.assign('productos.html');
+    });
 }
 
 
