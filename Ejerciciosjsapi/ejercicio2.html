@@ -4,8 +4,7 @@
     <title>Tabla de Usuarios</title>
   </head>
   <body>
-    <div id="contenedor">
-    </div>
+    <div id="contenedor"></div>
     <script>
       var tabla = 
       `<table id="tabla" class="table">
@@ -19,11 +18,10 @@
         <tbody>`
       var datostabla = ``
       var finaltabla = `</tbody> </table>`
-      fetch('https://j4jjw.mocklab.io/users')
+      const request = new Request("https://j4jjw.mocklab.io/users");
+      fetch(request)
         .then(response=>response.json())
         .then(data=>{
-          console.log(data);
-          console.log(arrayUsuarios);
           arrayData=data.arrayUsuarios;
           arrayData.forEach(elem => {
             datostabla += `<tr>
