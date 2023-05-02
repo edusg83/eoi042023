@@ -38,7 +38,7 @@ axios.get(urlProductos, {headers})
                     <i  data-bs-toggle="modal" data-bs-target="#modalBorrar" onclick="previoBorrar(${element.id})" class="bi bi-trash"></i>
                 </button>
                 <button class="btn btn-primary btn-circle">
-                    <i  data-bs-toggle="modal" data-bs-target="#modalModificar" onclick="previoModificar(${element.id})" class="bi bi-trash"></i>
+                    <i  data-bs-toggle="modal" data-bs-target="#modalModificar" onclick="previoModificar(${element.id})" class="bi bi-pencil"></i>
                 </button>
             </td>
         </tr>`
@@ -60,8 +60,25 @@ function previoBorrar (id) {
 function borrarProducto() {
     console.log("Dentro de la funcion borrar, idProducto = " + idProducto);
     axios.delete('http://ligafalm.eu:28100/products/' + idProducto)
-    .then(() => alert("Producto eliminado"));
+    .then();
 }
+
+function crearProducto() {
+
+    var formulario = document.forms.formCrearProducto;
+
+    const dataRequest = {
+        "name": formulario.name.value,
+        "description": formulario.description.value,
+        "code": formulario.code.value
+    }
+
+    console.log(dataRequest.name)
+
+    axios.post("http://ligafalm.eu:28100/products", dataRequest, {headers})
+    .then();
+}
+
 
 
 
