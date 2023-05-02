@@ -8,16 +8,14 @@
 </head>
 <body>  
     <script>
-        fetch('https://j4jjw.mocklab.io/users', {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json'
-  }
-})
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
+      const request = new Request('https://j4jjw.mocklab.io/users');
+      const URL = request.url;
+      const method = request.method;
+      const credentials = request.credentials;
 
+      fetch(request)
+        .then(response=>response.json())
+        .then(data=>console.log(data));
     </script> 
 </body>
 </html>
