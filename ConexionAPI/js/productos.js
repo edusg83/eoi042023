@@ -34,11 +34,11 @@ axios.get(urlProductos, {headers})
             <td>${element.description}</td>
             <td>${element.code}</td>
             <td>
-                <button data-bs-toggle="modal" data-bs-target="#modalBorrar" class="btn btn-primary btn-circle">
-                    <i onclick="previoBorrar(${element.id})" class="bi bi-trash"></i>
+                <button data-bs-toggle="modal" data-bs-target="#modalBorrar" onclick="previoBorrar(${element.id})" class="btn btn-primary btn-circle">
+                    <i class="bi bi-trash"></i>
                 </button>
-                <button class="btn btn-primary btn-circle">
-                    <i data-bs-toggle="modal" data-bs-target="#modalModificar" onclick="previoModificar(${element.id})" class="bi bi-pencil"></i>
+                <button data-bs-toggle="modal" data-bs-target="#modalModificar" onclick="previoModificar(${element.id})" class="btn btn-primary btn-circle">
+                    <i class="bi bi-pencil"></i>
                 </button>
             </td>
         </tr>`
@@ -48,19 +48,61 @@ axios.get(urlProductos, {headers})
     document.getElementById("resultados").innerHTML = tabla;
 
 })
+.catch((error)=>{console.log(error)});
 
 let idProducto = 0;
 
 
 function previoBorrar (id) {
-    console.log("Dentro de la funcion previoBorrar, idProducto = " + id);
     idProducto = id;
 }
 
 function borrarProducto() {
-    console.log("Dentro de la funcion borrar, idProducto = " + idProducto);
     axios.delete('http://ligafalm.eu:28100/products/' + idProducto)
-    .then()
+    .then((respuesta)=>{
+        console.log(respuesta.data);
+        window.location.assign('productos.html');
+    })
+    .catch((error)=>{console.log(error)});
+}
+
+function previoModificar (id) {
+
+    idProducto = id;
+
+    axios.get('http://ligafalm.eu:28100/products/' + idProducto, {headers})
+    .then((respuesta) => {
+
+        let producto = respuesta.data;
+
+        var formulario = document.forms.formModificarProducto;
+
+        formulario.name.value = producto.name;
+        formulario.description.value = producto.description;
+        formulario.code.value = producto.code;
+
+    })
+    .catch((error)=>{console.log(error)});
+}
+
+function modificarProducto () {
+    var formulario = document.forms.formModificarProducto;
+
+    const dataRequest = {
+        "id": idProducto,
+        "name": formulario.name.value,
+        "description": formulario.description.value,
+        "code": formulario.code.value
+    }
+
+    console.log("ID: " + idProducto + " y Nombre: " + formulario.name.value)
+    console.log(dataRequest.name)
+
+    axios.put("http://ligafalm.eu:28100/products", dataRequest, {headers})
+    .then((respuesta)=>{
+        console.log(respuesta.data);
+        window.location.assign('productos.html');
+    })
     .catch((error)=>{console.log(error)});
 }
 
@@ -74,13 +116,12 @@ function crearProducto() {
         "code": formulario.code.value
     }
 
-    console.log(dataRequest.name)
-
     axios.post("http://ligafalm.eu:28100/products", dataRequest, {headers})
     .then((respuesta)=>{
         console.log(respuesta.data);
         window.location.assign('productos.html');
-    });
+    })
+    .catch((error)=>{console.log(error)});
 }
 
 

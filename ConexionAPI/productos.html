@@ -86,6 +86,39 @@
         </div>
     </div>
 
+    <!-- Modal Modificar -->
+    <div class="modal fade" tabindex="-1" id="modalModificar" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Confirmación de borrado</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="formModificarProducto" name="formModificarProducto">
+                <div class="form-group">
+                    Nombre:
+                    <input type="text" class="form-control form-control-user my-2" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    Descripción:
+                    <input type="textarea" class="form-control form-control-user my-2" id="description" name="description">
+                </div>
+                <div class="form-group">
+                    Código:
+                    <input type="text" class="form-control form-control-user my-2" id="code" name="code">
+                </div>
+              </form>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="modificarProducto()">Actualizar</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
         <script src="js/productos.js"></script>
 </body>
 </html>
