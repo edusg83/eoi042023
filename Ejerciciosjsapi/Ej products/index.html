@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <script>
+      
+        const API_URL = 'http://ligafalm.eu:28100/products';
+
+        async function getAllProducts() {
+            const response = await axios.get(API_URL,{headers});
+            return response.data;
+        }
+
+        async function getProductById(id) {
+            const response = await axios.get(`${API_URL}/${id}`,{headers});
+            return response.data;
+        }
+
+        async function createProduct(product) {
+            const response = await axios.post(API_URL,{headers});
+            return response.data;
+        }
+
+        async function updateProduct(product) {
+            const response = await axios.put(`${API_URL}/${id}`,{headers});
+            return response.data;
+        }
+
+        async function deleteProduct(id) {
+            const response = await axios.delete(`${API_URL}/${id}`,{headers});
+            return response.data;
+        }
+
+        function getAll() {
+            getAllProducts().then(products => {
+                console.log('Products:', products);
+            })};
+
+        function getById() {
+            const id = document.getElementById('id').value;
+            getProductById(id).then(product => {
+                console.log('Product:', product);
+            })};
+
+        function create() {
+            const name = document.getElementById('name').value;
+            const description = document.getElementById('description').value;
+            const code = document.getElementById('code').value;
+            const product = { name, description, code };
+            createProduct(product).then(newProduct => {
+                console.log('New product:', newProduct);
+            })};
+
+        function update() {
+            const id = document.getElementById('id').value;
+            const name = document.getElementById('name').value;
+            const description = document.getElementById('description').value;
+            const code = document.getElementById('code').value;
+            const product = { id, name, description, code };
+            updateProduct(product).then(updatedProduct => {
+                console.log('Updated product:', updatedProduct);
+            })};
+
+        function deleteById() {
+            const id = document.getElementById('id').value;
+            deleteProduct(id).then(deletedProduct => {
+                console.log('Deleted product:', deletedProduct);
+            })};
+    </script>
+</head>
+<body>
+    <h1>Products Manager</h1>
+    <h2>Get all products</h2>
+    <button onclick="getAll()">Get all products</button>
+    <hr>
+    <h2>Get product by ID</h2>
+    <label for="id">ID:</label>
+    <input type="text" id="id">
+    <button onclick="getById()">Get product by ID</button>
+    <hr>
+    <h2>Create product</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+    <br>
+    <label for="description">Description:</label>
+    <input type="text" id="description">
+    <br>
+    <label for="code">Code:</label>
+    <input type="text" id="code">
+    <br>
+    <button onclick="create()">Create product</button>
+    <h2>Update product</h2>
+    <label for="id">ID:</label>
+    <input type="text" id="id">
+    <br>
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+    <br>
+    <label for="description">Description:</label>
+    <input type="text" id="description">
+    <br>
+    <label for="code">Code:</label>
+    <input type="text" id="code">
+    <br>
+    <button onclick="update()">Update product</button>
+    <hr>
+    <h2>Delete product</h2>
+    <label for="id">ID:</label>
+    <input type="text" id="id">
+    <button onclick="deleteById()">Delete product</button>
+</body>
+</html>
