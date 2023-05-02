@@ -25,14 +25,14 @@
           console.log(data);
           console.log(arrayUsuarios);
           arrayData=data.arrayUsuarios;
-          arrayData.array.forEach(element => {
+          arrayData.forEach(elem => {
             datostabla += `<tr>
             <td>${elem.nombre}</td>
             <td>${elem.apellidos}</td>
             <td>${elem.direccion}</td>
             </tr>`
           });
-          document.getElementById("contenedor").innerHTML= tabla+datosTabla+finalTabla  
+          document.getElementById("contenedor").innerHTML= tabla+datostabla+finaltabla; 
         });
     </script>
   </body>
