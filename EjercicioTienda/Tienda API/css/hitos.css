@@ -1,0 +1,44 @@
+#marcoTabla {
+    max-width: 700px;
+    min-height: 600px;
+
+}
+
+#tituloTabla,
+#detallesModal {
+    font-size: 18px;
+}
+
+#nombreHito{
+
+    padding-right:10px;
+}
+
+#alertaDetalles {
+    font-size: 15px;
+}
+
+.alertaExitoVisible {
+    animation: cuadrado 1s linear 4s 1 alternate forwards;
+}
+
+@keyframes cuadrado {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+td,tr,th {
+    vertical-align: middle
+}
+
+#etiquetaFechaInicio,
+#etiquetaNombreHito,
+#etiquetaFechaFinal{
+    white-space: nowrap
+}
