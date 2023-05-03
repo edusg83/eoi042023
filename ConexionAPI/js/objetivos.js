@@ -126,7 +126,7 @@ function crearObjetivo() {
         console.log(respuestaObjetivo.data);
 
         const dataRequestHito = {
-            "name": formulario.nameObjetivo.value,
+            "idMilestone": formulario.selectMilestone.value,
             "goals": respuestaObjetivo.data
         }
 
