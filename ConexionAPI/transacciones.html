@@ -11,26 +11,60 @@
 
 </head>
 <body>
+  
+  <div class="container-fluid">
     <div class="row">
-        <div class="offset-3 col-6">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Productos</h4>
-                </div>
-                <div class="card-body">
-                    <div class="row text-center">
-                        <div class="col-12" id="resultados">
-                        </div>
-                        <div class="offset-9 col-3">
-                            <button class="btn btn-primary btn-circle" data-bs-toggle="modal" data-bs-target="#modalCrear" onclick="previoCrear()">
-                                Nueva Transacción
-                            </button>
+        <div class="col-auto col-xl-2 bg-light border">
+            <div class="d-flex flex-column align-items-center px-3 pt-2 text-white min-vh-100 mt-5">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li>
+                        <a href="hitos.html" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-flag"></i> <span class="ms-1 d-none d-sm-inline">Hitos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="objetivos.html" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bookmark-x"></i> <span class="ms-1 d-none d-sm-inline">Objetivos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="transacciones.html" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-cart"></i> <span class="ms-1 d-none d-sm-inline">Transacciones</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="productos.html" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Productos</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col py-3">
+          <div class="row mt-5">
+            <div class="offset-1 col-10">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Transacciones</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row text-center">
+                            <div class="col-12" id="resultados">
+                            </div>
+                            <div class="offset-9 col-3">
+                                <button class="btn btn-primary btn-circle" data-bs-toggle="modal" data-bs-target="#modalCrear" onclick="previoCrear()">
+                                    Nueva Transacción
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </div>
+  </div>
+    
 
     <!-- Modal Borrar -->
     <div class="modal fade" tabindex="-1" id="modalBorrar" aria-hidden="true">
