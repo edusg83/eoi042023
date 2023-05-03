@@ -30,10 +30,10 @@ axios.get(urlProductos, {headers})
         
         filas += `
         <tr>
-            <td>${element.name}</td>
-            <td>${element.description}</td>
-            <td>${element.code}</td>
-            <td>
+            <td class="col-3">${element.name}</td>
+            <td class="col-3">${element.description}</td>
+            <td class="col-3">${element.code}</td>
+            <td class="col-3">
                 <button data-bs-toggle="modal" data-bs-target="#modalBorrar" onclick="previoBorrar(${element.id})" class="btn btn-primary btn-circle">
                     <i class="bi bi-trash"></i>
                 </button>
