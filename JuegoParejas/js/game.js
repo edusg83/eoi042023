@@ -55,5 +55,14 @@ function random() {
 }
 
 function cambiarImagen() {
+
+    for (let i = 0; i < 24; i++) {
+
+    }
+
+
+    var indiceImagen = document.getElementById("1");
+
     
+
 }
