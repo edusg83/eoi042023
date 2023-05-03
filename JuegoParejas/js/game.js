@@ -18,9 +18,9 @@ let arrayAleatorios = [24]
 
 
 let clickUno = 0;
-let clickUno_lenght12 = 0;
+let clickUno_numeroAleatorio = 0;
 let clickDos = 0;
-let clickDos_lenght12 = 0;
+let clickDos_numeroAleatorio = 0;
 
 inicio();
 
@@ -65,47 +65,40 @@ function random() {
 }
 
 function clickImagen(image) {
-
     if (clickUno === 0) {
 
         document.getElementById(image.id).src="images/" + mapaImagenes.get(arrayAleatorios[Number(image.id - 1)]);
         clickUno = Number(image.id);
-
-        if (clickUno > 12) {
-            clickUno_lenght12 = clickUno - 12;
-        } else {
-            clickUno_lenght12 = clickUno;
-        }
+        clickUno_numeroAleatorio = arrayAleatorios[Number(image.id - 1)];
     
     } else if (clickDos === 0 && Number(image.id) !== clickUno) {
 
         document.getElementById(image.id).src="images/" + mapaImagenes.get(arrayAleatorios[Number(image.id -1)]);
         clickDos = Number(image.id);
-
-        if (clickDos > 12) {
-            clickDos_lenght12 = clickDos - 12;
-        } else {
-            clickDos_lenght12 = clickDos;
-        }
-
-        console.log("ClickUno: " + clickUno_lenght12);
-        console.log("ClickDos: " + clickDos_lenght12);
-
+        clickDos_numeroAleatorio = arrayAleatorios[Number(image.id - 1)];
+        
         //Esperamos dos segundos
         setTimeout(() => {  
             
-            if (clickUno_lenght12 !== clickDos_lenght12) {
+            if (clickUno_numeroAleatorio !== clickDos_numeroAleatorio) {
 
-            document.getElementById(clickUno).src="images/FondoGris.png";
-            document.getElementById(clickDos).src="images/FondoGris.png";
+                document.getElementById(clickUno).src="images/FondoGris.png";
+                document.getElementById(clickDos).src="images/FondoGris.png";
 
-            //Reseteamos las variables
-            clickUno = 0;
-            clickDos = 0;
-            clickUno_lenght12 = 0;
-            clickDos_lenght12 = 0;
+                //Reseteamos las variables
+                clickUno = 0;
+                clickDos = 0;
+                clickUno_numeroAleatorio = 0;
+                clickDos_numeroAleatorio = 0;
         
-        } }, 2000);
+            } else {
+                //Reseteamos las variables
+                clickUno = 0;
+                clickDos = 0;
+                clickUno_numeroAleatorio = 0;
+                clickDos_numeroAleatorio = 0;
+            }
+        }, 1000);
 
     }
 
