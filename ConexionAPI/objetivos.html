@@ -104,6 +104,25 @@
             </div>
         </div>
 
+        <!-- Modal Borrar -->
+        <div class="modal fade" tabindex="-1" id="modalBorrar" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title">Confirmación de borrado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <p>¿Seguro que deseas borrar este objetivo?</p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="borrarObjetivo()">Borrar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
         <script src="js/objetivos.js"></script>
     </body>
 </html>
