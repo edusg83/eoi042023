@@ -111,37 +111,55 @@ function modificarProducto () {
 function previoCrear () {
 
     axios.get('http://ligafalm.eu:28100/products?page=0&size=100', {headers})
-    .then((respuesta) => {
+    .then((respuestaProductos) => {
 
-        let arrayData = respuesta.data;
+        let arrayProductos = respuestaProductos.data;
 
-        let option = ``;
+        let optionProductos = ``;
 
-        arrayData.forEach(element => {
+        arrayProductos.forEach(producto => {
             
-            option += `<option value="${element.code}">${element.name}</option>`
-    });
+            optionProductos += `<option value="${producto.code}">${producto.name}</option>`
+        })
 
-    document.getElementById("selectProduct").innerHTML = option;
+        document.getElementById("selectProduct").innerHTML = optionProductos;
 
-})
-.catch((error)=>{console.log(error)});
+    }).catch((error)=>{console.log(error)});
+
+    axios.get('http://ligafalm.eu:28100/goals?page=0&size=100', {headers})
+    .then((respuestaObjetivos) => {
+
+        let arrayObjetivos = respuestaObjetivos.data;
+
+        let opctionObjetivos = ``;
+
+        arrayObjetivos.forEach(objetivo => {
+            
+            opctionObjetivos += `<option value="${objetivo.id}">${objetivo.name}</option>`
+        });
+
+        document.getElementById("selectGoals").innerHTML = opctionObjetivos;
+
+    }).catch((error)=>{console.log(error)});
+
 }
 
-function crearProducto() {
+function crearTransaccion() {
 
-    var formulario = document.forms.formCrearProducto;
+    var formulario = document.forms.formCrearTransaccion;
 
     const dataRequest = {
-        "name": formulario.name.value,
-        "description": formulario.description.value,
-        "code": formulario.code.value
+        "type": "SELL",
+        "productCode": formulario.selectProduct.value,
+        "total": formulario.total.value,
+        "done": 0,
+        "goal": formulario.selectGoals.value
     }
 
-    axios.post("http://ligafalm.eu:28100/products", dataRequest, {headers})
+    axios.post("http://ligafalm.eu:28100/transactions", dataRequest, {headers})
     .then((respuesta)=>{
         console.log(respuesta.data);
-        window.location.assign('productos.html');
+        window.location.assign('transacciones.html');
     })
     .catch((error)=>{console.log(error)});
 }

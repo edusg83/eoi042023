@@ -90,22 +90,31 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Crear producto</h5>
+              <h5 class="modal-title">Crear transacción</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form id="formCrearProducto" name="formCrearProducto">
+              <form id="formCrearTransaccion" name="formCrearTransaccion">
                 <div class="form-group">
-                    <select class="form-select" name="selectProduct" id="selectProduct">
-                        
-                    </select>
+                    <div class="form-group mb-4">
+                        Producto:
+                        <select class="form-select mt-2" name="selectProduct" id="selectProduct"></select>
+                    </div>
+                    <div class="form-group mb-4">
+                        Total vendido:
+                        <input type="text" class="form-control form-control-user mt-2" id="total" name="total">
+                    </div>
+                    <div class="form-group mb-4">
+                        Selecciona un objetivo:
+                        <select class="form-select mt-2" name="selectGoals" id="selectGoals"></select>
+                    </div>
                 </div>
               </form>
             </div>
 
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="crearProducto()">Añadir</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="crearTransaccion()">Añadir</button>
             </div>
           </div>
         </div>
