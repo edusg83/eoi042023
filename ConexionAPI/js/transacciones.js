@@ -77,29 +77,13 @@ function previoModificar (id) {
     var formulario = document.forms.formModificarTransaccion;
     var arrayTransaccion;
 
-    axios.get('http://ligafalm.eu:28100/transactions/' + id, {headers})
-    .then((respuestaTransaccion) => {
-
-        arrayTransaccion = respuestaTransaccion.data;
-
-        formulario.totalMod.value = arrayTransaccion.total;
-
-    }).catch((error)=>{console.log(error)});
-
     axios.get('http://ligafalm.eu:28100/products?page=0&size=100/', {headers})
     .then((respuestaProductos) => {
-
-        let codeProducto = arrayTransaccion.productCode;
         let arrayProductos = respuestaProductos.data;
         let optionProductos = ``;
 
         arrayProductos.forEach(producto => {
-
-            if (codeProducto === producto.code) {
-                optionProductos += `<option value="${producto.code}" selected>${producto.name}</option>`;
-            } else {
                 optionProductos += `<option value="${producto.code}">${producto.name}</option>`;
-            }
 
         })
 
@@ -110,24 +94,37 @@ function previoModificar (id) {
     axios.get('http://ligafalm.eu:28100/goals?page=0&size=100', {headers})
     .then((respuestaObjetivos) => {
         
-        let idObjetivo = arrayTransaccion.goal;
+        //let idObjetivo = arrayTransaccion.goal;
         let arrayObjetivos = respuestaObjetivos.data;
 
         let optionObjetivos = ``;
 
         arrayObjetivos.forEach(objetivo => {
 
-            if (idObjetivo === objetivo.id) {
-                optionObjetivos += `<option value="${objetivo.id}" selected>${objetivo.name}</option>`;
-            } else {
+
                 optionObjetivos += `<option value="${objetivo.id}">${objetivo.name}</option>`;
-            }
+            
 
         });
 
         document.getElementById("selectModGoals").innerHTML = optionObjetivos;
 
     }).catch((error)=>{console.log(error)});
+
+    axios.get('http://ligafalm.eu:28100/transactions/' + id, {headers})
+    .then((respuestaTransaccion) => {
+
+        arrayTransaccion = respuestaTransaccion.data;
+
+        
+        formulario.selectModGoals.value=arrayTransaccion.goal;
+        formulario.selectModProduct.value=arrayTransaccion.productCode;
+        formulario.totalMod.value = arrayTransaccion.total;
+    
+    }).catch((error)=>{console.log(error)});
+
+    
+   
 
 }
 
