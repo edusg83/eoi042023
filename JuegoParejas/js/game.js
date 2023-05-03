@@ -21,6 +21,8 @@ let clickUno = 0;
 let clickUno_numeroAleatorio = 0;
 let clickDos = 0;
 let clickDos_numeroAleatorio = 0;
+let turnoJugador1 = false;
+let turnoJugador2 = false;
 
 inicio();
 
