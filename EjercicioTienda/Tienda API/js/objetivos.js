@@ -217,7 +217,7 @@ function guardarObjetivo() {
       .then((respuesta) => {
         if (respuesta.status == 200) {
 
-          axios.put('//ligafalm.eu:28100/goals/milestone/' + mapaHitos.get(nombreHito), {
+          axios.put('http://ligafalm.eu:28100/goals/milestone/' + mapaHitos.get(nombreHito), {
 
             "idMilestone": mapaHitos.get(nombreHito),
             "goals": [respuesta.data]
@@ -226,7 +226,7 @@ function guardarObjetivo() {
               if (respuesta.status == 202) {
                 document.getElementById("alertaExito").innerHTML = `
                           <div  class="alert alert-success m-0 p-1 pe-2 ps-2 alertaExitoVisible" role="alert">
-                          ¡Se ha creado el producto con éxito!</div>`
+                          ¡Se ha creado el objetivo con éxito!</div>`
                 obtenerObjetivos();
                 limpiarModalDetalles();
                 document.getElementById("cerrarModalDetalles").click()
@@ -240,57 +240,4 @@ function guardarObjetivo() {
           <div id="alertaDetalles" class="alert alert-danger" role="alert">
           Todos los campos deben estar rellenos correctamente</div>`
   }
-
 }
-
-
-/**crear un objetivo
- * {
-  "name": "prueba",
-  "description": "descripcion",
-  "assignedTo": 5,
-  "progress": 0
-}
- */
-/*
-{
-    "id": 8,
-    "name": "objetivo 1",
-    "description": "Descripcion objetivo 1",
-    "assignedTo": "AdminUserTestUsername",
-    "progress": 0,
-    "transactions": [
-      {
-        "id": 12,
-        "type": "SELL",
-        "total": 3,
-        "done": 0,
-        "date": null,
-        "productCode": "CAL-XXX",
-        "goal": null,
-        "assignedTo": null
-      },
-      {
-        "id": 100,
-        "type": "SELL",
-        "total": 6,
-        "done": 0,
-        "date": "2023-05-01T11:09:14.063",
-        "productCode": "COD-BAL-VOL",
-        "goal": null,
-        "assignedTo": null
-      },
-      {
-        "id": 139,
-        "type": "SELL",
-        "total": 35,
-        "done": 0,
-        "date": "2023-05-02T17:21:40.313",
-        "productCode": "COD-BAL-FUT",
-        "goal": null,
-        "assignedTo": null
-      }
-    ]
-  },
-
-*/

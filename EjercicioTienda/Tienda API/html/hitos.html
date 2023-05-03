@@ -103,6 +103,34 @@
     </div>
 </div>
 
+
+<!-- Modal transacciones producto -->
+<div id="modalTransacciones" class="modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Objetivos del hito</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="cuerpoModalBorrar" class="modal-body m-2">
+                <p>Listado de transacciones del objetivo <b> </b></p>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Usuario Asignado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contenidoTablaModalTransacciones">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Modal borrar producto -->
 <div id="modalBorrar" class="modal">
     <div class="modal-dialog modal-lg">

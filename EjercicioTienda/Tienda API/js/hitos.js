@@ -41,9 +41,10 @@ function obtenerHitos() {
                 <td >${element.end.split('T')[0]}</td>
                 <td >${element.progress}</td>
                 <td class="d-flex justify-content-end">
-                    <button type="button" class="btn ms-0 ps-0">
-                    <img src="../image/search.svg" alt="boton de buscar" width="20px"/>
-                    </button>
+                <button type="button" class="btn ms-0 ps-0" data-bs-toggle="modal"
+                data-bs-target="#modalTransacciones" onclick="actualizarModalTransacciones(${element.id})">
+                <img src="../image/search.svg" alt="boton de buscar" width="20px"/>
+                 </button>
                     <button type="button" class="btn ms-0 ps-0" data-bs-toggle="modal"
                         data-bs-target="#detallesModal" onclick="actualizarModalProducto(${element.id})">
                         <img src="../image/pencil.svg" alt="botod de añadir" width="20px"/>
@@ -58,6 +59,26 @@ function obtenerHitos() {
 }
 //obtención de los hitos cuando se carga la página
 obtenerHitos();
+
+function actualizarModalTransacciones(idObjetivo){
+
+    const urlUsers = 'http://ligafalm.eu:28100/milestones/'+idObjetivo+'/goals'
+    axios.get(urlUsers, { headers })
+        .then((respuesta) => {
+            document.getElementById("contenidoTablaModalTransacciones").innerHTML = ""
+           
+            respuesta.data.goals.forEach(element => {
+              let cardTabla = `
+              <tr>
+                  <td>${element.id}</td>
+                  <td>${element.name}</td>
+                  <td>${element.description}</td>
+                  <td>${element.assignedTo}</td>
+              </tr> `
+              document.getElementById("contenidoTablaModalTransacciones").innerHTML += cardTabla
+              });
+          })
+  } 
 
 //limpiar campos del modal detalles
 function limpiarModalDetalles(){
