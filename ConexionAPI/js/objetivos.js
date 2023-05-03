@@ -82,7 +82,7 @@ function previoCrear () {
 
         arrayUsuarios.forEach(usuario => {
             
-            optionUsuarios += `<option value="${usuario.username}">${usuario.username}</option>`
+            optionUsuarios += `<option value="${usuario.id}">${usuario.username}</option>`
         
         });
 
@@ -120,7 +120,7 @@ function crearObjetivo() {
         "progress": 0
     }
 
-    axios.post("http://ligafalm.eu:28100/goals", dataRequestObjetivo, {headers})
+    axios.post("http://ligafalm.eu:28100/goals/", dataRequestObjetivo, {headers})
     .then((respuestaObjetivo)=>{
 
         console.log(respuestaObjetivo.data);
@@ -131,7 +131,7 @@ function crearObjetivo() {
         }
 
         
-        axios.put("http://ligafalm.eu:28100/goals/milestone" + formulario.selectMilestone.value, dataRequestHito, {headers})
+        axios.put("http://ligafalm.eu:28100/goals/milestone/" + formulario.selectMilestone.value, dataRequestHito, {headers})
         .then((respuestaHito)=>{
 
             console.log(respuestaHito.data);
