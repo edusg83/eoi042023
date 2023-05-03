@@ -79,7 +79,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="borrarProducto()">Borrar</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="borrarTransaccion()">Borrar</button>
             </div>
           </div>
         </div>
@@ -122,36 +122,38 @@
 
     <!-- Modal Modificar -->
     <div class="modal fade" tabindex="-1" id="modalModificar" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Modificar producto</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form id="formModificarProducto" name="formModificarProducto">
-                <div class="form-group">
-                    Nombre:
-                    <input type="text" class="form-control form-control-user my-2" id="name" name="name">
-                </div>
-                <div class="form-group">
-                    Descripción:
-                    <input type="textarea" class="form-control form-control-user my-2" id="description" name="description">
-                </div>
-                <div class="form-group">
-                    Código:
-                    <input type="text" class="form-control form-control-user my-2" id="code" name="code">
-                </div>
-              </form>
-            </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Crear transacción</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formModificarTransaccion" name="formModificarTransaccion">
+              <div class="form-group">
+                  <div class="form-group mb-4">
+                      Producto:
+                      <select class="form-select mt-2" name="selectModProduct" id="selectModProduct"></select>
+                  </div>
+                  <div class="form-group mb-4">
+                      Total vendido:
+                      <input type="text" class="form-control form-control-user mt-2" id="totalMod" name="totalMod">
+                  </div>
+                  <div class="form-group mb-4">
+                      Selecciona un objetivo:
+                      <select class="form-select mt-2" name="selectModGoals" id="selectModGoals"></select>
+                  </div>
+              </div>
+            </form>
+          </div>
 
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="modificarProducto()">Actualizar</button>
-            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="modificarTransaccion()">Modificar</button>
           </div>
         </div>
-    </div>
+      </div>
+  </div>
 
         <script src="js/transacciones.js"></script>
 </body>

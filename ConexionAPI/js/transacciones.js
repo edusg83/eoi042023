@@ -52,58 +52,101 @@ axios.get(urlProductos, {headers})
 })
 .catch((error)=>{console.log(error)});
 
-let idProducto = 0;
+let idTransaccion = 0;
 
 
 function previoBorrar (id) {
-    idProducto = id;
+    idTransaccion = id;
 }
 
-function borrarProducto() {
-    axios.delete('http://ligafalm.eu:28100/products/' + idProducto)
+function borrarTransaccion() {
+
+    axios.delete('http://ligafalm.eu:28100/transactions/' + idTransaccion)
     .then((respuesta)=>{
+
         console.log(respuesta.data);
-        window.location.assign('productos.html');
-    })
-    .catch((error)=>{console.log(error)});
+        window.location.assign('transacciones.html');
+
+    }).catch((error)=>{console.log(error)});
+
 }
 
 function previoModificar (id) {
 
-    idProducto = id;
+    idTransaccion = id;
+    var formulario = document.forms.formModificarTransaccion;
+    var arrayTransaccion;
 
-    axios.get('http://ligafalm.eu:28100/products/' + idProducto, {headers})
-    .then((respuesta) => {
+    axios.get('http://ligafalm.eu:28100/transactions/' + id, {headers})
+    .then((respuestaTransaccion) => {
 
-        let producto = respuesta.data;
+        arrayTransaccion = respuestaTransaccion.data;
 
-        var formulario = document.forms.formModificarProducto;
+        formulario.totalMod.value = arrayTransaccion.total;
 
-        formulario.name.value = producto.name;
-        formulario.description.value = producto.description;
-        formulario.code.value = producto.code;
+    }).catch((error)=>{console.log(error)});
 
-    })
-    .catch((error)=>{console.log(error)});
+    axios.get('http://ligafalm.eu:28100/products?page=0&size=100/', {headers})
+    .then((respuestaProductos) => {
+
+        let codeProducto = arrayTransaccion.productCode;
+        let arrayProductos = respuestaProductos.data;
+        let optionProductos = ``;
+
+        arrayProductos.forEach(producto => {
+
+            if (codeProducto === producto.code) {
+                optionProductos += `<option value="${producto.code}" selected>${producto.name}</option>`;
+            } else {
+                optionProductos += `<option value="${producto.code}">${producto.name}</option>`;
+            }
+
+        })
+
+        document.getElementById("selectModProduct").innerHTML = optionProductos;
+
+    }).catch((error)=>{console.log(error)});
+
+    axios.get('http://ligafalm.eu:28100/goals?page=0&size=100', {headers})
+    .then((respuestaObjetivos) => {
+        
+        let idObjetivo = arrayTransaccion.goal;
+        let arrayObjetivos = respuestaObjetivos.data;
+
+        let optionObjetivos = ``;
+
+        arrayObjetivos.forEach(objetivo => {
+
+            if (idObjetivo === objetivo.id) {
+                optionObjetivos += `<option value="${objetivo.id}" selected>${objetivo.name}</option>`;
+            } else {
+                optionObjetivos += `<option value="${objetivo.id}">${objetivo.name}</option>`;
+            }
+
+        });
+
+        document.getElementById("selectModGoals").innerHTML = optionObjetivos;
+
+    }).catch((error)=>{console.log(error)});
+
 }
 
-function modificarProducto () {
-    var formulario = document.forms.formModificarProducto;
+function modificarTransaccion () {
+    var formulario = document.forms.formModificarTransaccion;
 
     const dataRequest = {
-        "id": idProducto,
-        "name": formulario.name.value,
-        "description": formulario.description.value,
-        "code": formulario.code.value
+        "id": idTransaccion,
+        "type": "SELL",
+        "productCode": formulario.selectModProduct.value,
+        "total": formulario.totalMod.value,
+        "done": 0,
+        "goal": formulario.selectModGoals.value
     }
 
-    console.log("ID: " + idProducto + " y Nombre: " + formulario.name.value)
-    console.log(dataRequest.name)
-
-    axios.put('http://ligafalm.eu:28100/products/' + idProducto, dataRequest, {headers})
+    axios.put('http://ligafalm.eu:28100/transactions/' + idTransaccion, dataRequest, {headers})
     .then((respuesta)=>{
         console.log(respuesta.data);
-        window.location.assign('productos.html');
+        window.location.assign('transacciones.html');
     })
     .catch((error)=>{console.log(error)});
 }
@@ -131,14 +174,14 @@ function previoCrear () {
 
         let arrayObjetivos = respuestaObjetivos.data;
 
-        let opctionObjetivos = ``;
+        let optionObjetivos = ``;
 
         arrayObjetivos.forEach(objetivo => {
             
-            opctionObjetivos += `<option value="${objetivo.id}">${objetivo.name}</option>`
+            optionObjetivos += `<option value="${objetivo.id}">${objetivo.name}</option>`
         });
 
-        document.getElementById("selectGoals").innerHTML = opctionObjetivos;
+        document.getElementById("selectGoals").innerHTML = optionObjetivos;
 
     }).catch((error)=>{console.log(error)});
 
