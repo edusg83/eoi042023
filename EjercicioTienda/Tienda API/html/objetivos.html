@@ -110,40 +110,103 @@
         </div>
     </div>
 
+<!-- Modal borrar producto -->
+<div id="modalBorrar" class="modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Borrar entrada</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="cuerpoModalBorrar" class="modal-body m-2">
+                <p>¿Desea borrar la siguiente entrada?<p class=" m-2 ms-3 me-3">
+                    Recuerda que si un objetivo tiene asociadas transacciones en su 
+                    interior no podrá ser borrado. Accede primero a sus transacciones y eliminalas.
+                </p>
+                </p>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Usuario Asignado</th>
+                            <th>Nº transacciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contenidoTablaModalBorrar">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer" id="botoneraModalBorrar">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal borrar producto -->
+<div id="modalTransacciones" class="modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Transacciones del objetivo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="cuerpoModalBorrar" class="modal-body m-2">
+                <p>Listado de transacciones del objetivo <b> </b></p>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Codigo producto</th>
+                            <th>Número vendido</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contenidoTablaModalTransacciones">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!--modal detalles producto, usado para crear o modificar-->
 <div id="detallesModal" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 id="tituloModalDetalles" class="modal-title ms-4">Crear un hito</h5>
+                <h5 id="tituloModalDetalles" class="modal-title ms-4">Crear un objetivo</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" 
                 onclick="limpiarModalDetalles()"></button>
             </div>
             <div class="modal-body  m-3  ms-4">
-                <P id="descripcionModalDetalles" class="mb-4">Añade un nuevo hito a la base de datos</P>
+                <P id="descripcionModalDetalles" class="mb-4">Añade un nuevo objetivo a la base de datos</P>
                 <form class="m-3">
                     <div class="d-flex flex-lg-row flex-sm-column">
                         <div class="form-group d-flex">
-                            <label for="FechaInicio" id="etiquetaFechaInicio" class=" me-3">Nombre: </label>
-                            <input type="text" class="form-control form-control-sm me-4 " id="nombreProducto">                       
+                            <label for="nombreObjetivo"  class=" me-3">Nombre: </label>
+                            <input type="text" class="form-control form-control-sm me-4 " id="nombreObjetivo">                       
                          </div>
                         <div class="form-group d-flex">
-                            <label for="FechaFinal" id="etiquetaFechaFinal" class="me-3">Descripción: </label>
-                            <input type="text" class="form-control form-control-sm pe-5 ps-5 " id="nombreProducto"> 
+                            <label for="descripcionObjetivo" id="etiquetaDescripcionObjetivo" class="me-3">Descripción: </label>
+                            <input type="text" class="form-control form-control-sm" id="descripcionObjetivo"> 
                          </div>
                     </div>
                     <div id="casillasExtraActualizar">
                     <div class="d-flex flex-lg-row flex-sm-column mt-4">
                         <div class="form-group d-flex" >
-                            <label for="nombreProducto" id="etiquetaNombreProducto" class="me-4">Usuario asignado: </label>
-                            <select class="custom-select form-control-sm me-4" id="nombreProducto">
-                                <option value="assssssasas">asasaaaaaaaaa</option>
+                            <label for="usuarioAsignado" id="etiquetaUsuarioAsignado" class="me-4">Usuario asignado: </label>
+                            <select class="custom-select form-control-sm me-4" id="usuarioAsignado">
+                                
                             </select>
                         </div>
                         <div class="form-group d-flex">
-                            <label for="nombreProducto" id="etiquetaNombreProducto" class="me-4">Hito asignado: </label>
-                            <select class="custom-select form-control-sm me-4" id="nombreProducto">
-                                <option value="assssssasas">asasaaaaaaaaa</option>
+                            <label for="hitoAsignado" id="etiquetaHitoAsignado" class="me-4">Hito asignado: </label>
+                            <select class="custom-select form-control-sm me-4" id="hitoAsignado">
+                         
                             </select>
                         </div></div>
                  
@@ -156,7 +219,7 @@
                 </div>
                 <div>
                     <button type="submit" id="guardarModalDetalles" class="btn btn-primary"
-                        onclick="guardarHito()">Guardar</button>
+                        onclick="guardarObjetivo()">Guardar</button>
                     <button type="button" id="cerrarModalDetalles" class="btn btn-secondary"
                         onclick="limpiarModalDetalles()" data-bs-dismiss="modal">Cerrar</button>
                 </div>
