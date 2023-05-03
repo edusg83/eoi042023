@@ -117,28 +117,27 @@ function crearObjetivo() {
         "name": formulario.nameObjetivo.value,
         "description": formulario.descriptionObjetivo.value,
         "assignedTo": formulario.selectAssignedTo.value,
-        "progress": 0,
+        "progress": 0
     }
 
     axios.post("http://ligafalm.eu:28100/goals", dataRequestObjetivo, {headers})
     .then((respuestaObjetivo)=>{
 
-        console.log(respuesta.data);
+        console.log(respuestaObjetivo.data);
 
         const dataRequestHito = {
             "name": formulario.nameObjetivo.value,
-            "goals": respuestaObjetivo.data,
+            "goals": respuestaObjetivo.data
         }
 
         
         axios.put("http://ligafalm.eu:28100/goals/milestone" + formulario.selectMilestone.value, dataRequestHito, {headers})
         .then((respuestaHito)=>{
 
-            console.log(respuesta.data);
+            console.log(respuestaHito.data);
+            window.location.assign('objetivos.html');
 
         }).catch((error)=>{console.log(error)});
-
-        window.location.assign('objetivos.html');
 
     }).catch((error)=>{console.log(error)});
 }
