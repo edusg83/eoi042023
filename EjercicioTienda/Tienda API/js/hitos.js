@@ -66,7 +66,11 @@ function actualizarModalTransacciones(idObjetivo){
     axios.get(urlUsers, { headers })
         .then((respuesta) => {
             document.getElementById("contenidoTablaModalTransacciones").innerHTML = ""
-           
+            
+            document.getElementById("datosModalHito").innerHTML = `${respuesta.data.name}: `
+            document.getElementById("fechasHitoModal").innerHTML =
+                `<pre>Fecha inicio: ${respuesta.data.start.split('T')[0]}   Fecha final: ${respuesta.data.end.split('T')[0]} </pre> `
+
             respuesta.data.goals.forEach(element => {
               let cardTabla = `
               <tr>
