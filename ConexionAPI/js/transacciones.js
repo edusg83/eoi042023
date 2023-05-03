@@ -49,11 +49,9 @@ axios.get(urlProductos, {headers})
     tabla += filas + finTabla;
     document.getElementById("resultados").innerHTML = tabla;
 
-})
-.catch((error)=>{console.log(error)});
+}).catch((error)=>{console.log(error)});
 
 let idTransaccion = 0;
-
 
 function previoBorrar (id) {
     idTransaccion = id;
