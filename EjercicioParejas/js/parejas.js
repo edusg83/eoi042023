@@ -81,15 +81,7 @@ function revelarCarta(boton) {
         cartasLevantadas.push(boton.id)
 
         if(numeroCartasLevantadas == 2){
-            comprobarAcierto()
-            
-        }else if(numeroCartasLevantadas == 3){
-            document.getElementById(cartasLevantadas[0]).innerHTML= cartaTapada
-            document.getElementById(cartasLevantadas[1]).innerHTML= cartaTapada
-            
-            cartasLevantadas=[]
-            numeroCartasLevantadas = 1;
-            cartasLevantadas.push(boton.id)
+            comprobarAcierto()   
         }
     } 
 }
@@ -112,7 +104,13 @@ function comprobarAcierto(){
             obtenerResultados();
         }
     }else{
-        cambioJugador();
+        setTimeout(function(){
+            document.getElementById(cartasLevantadas[0]).innerHTML= cartaTapada
+            document.getElementById(cartasLevantadas[1]).innerHTML= cartaTapada
+            cartasLevantadas=[]
+            numeroCartasLevantadas = 0;
+            cambioJugador();
+        }, 500);    
     }
 }
 
