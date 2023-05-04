@@ -32,6 +32,11 @@ let puntosTotales = 0;
 inicio();
 
 function inicio() {
+    
+    $(document).ready(function()
+    {
+       $("#mostrarmodal").modal("show");
+    });
 
     random();
 
