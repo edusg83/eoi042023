@@ -23,9 +23,9 @@
 <main>
     <!-- seccion donde se listan los productos de la bd -->
 <div id="wrapper">
-    <div id="marcoTabla" class="container-fluid align-content-center mt-5">
+    <div id="marcoTabla" class="container-fluid align-content-start mt-5">
 
-        <form >
+        <form class="mb-5">
             <div class="form-group">
               <label for="usuario">Usuario</label>
               <input type="text" class="form-control" id="usuario" value="eoi@eoi.com" >
@@ -38,8 +38,17 @@
    
             <button type="button" class="btn btn-primary mt-2" onclick="iniciarSesion()">Submit</button>
           </form>
-
     </div>
+          <div class="card d-flex align-content-start">
+            <div class="card-body">
+              <p id="info1"></p>
+              <p id="info2"></p>
+              <p id="info3"></p>
+              <p id="info4"></p>
+              <p id="info5"></p>
+            </div>
+          </div>
+
 </div>
    
 </main>
