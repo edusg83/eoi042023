@@ -59,12 +59,12 @@ function iniciarSesion(){
         console.log("id: "+ id+ ", username: "+username+", email: "+email+", roles: "+roles)
 
         console.log(token)
-        
+        const headers={
+            'token':token
+        }
         // Con el identificador obtenido (id) llamar al siguiente endpoint para conseguir la información del usuario
         let urlId = 'https://eoi.wiremockapi.cloud/usuario/'+ id
-        axios.get(urlId, { 
-            'token': token
-         })
+        axios.get(urlId, {headers})
             .then((respuesta) => {
                 
                 console.log(respuesta)
