@@ -70,18 +70,18 @@
                 <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h5 class="modal-title">Crear objetivo</h5>
+                    <h5 class="modal-title">Crear hito</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <form id="formCrearTransaccion" name="formCrearObjetivo">
+                    <form id="formCrearHito" name="formCrearHito">
                         <div class="form-group">
                             <div class="form-group mb-4">
-                                Hito:
+                                Inicio:
                                 <input type="text" class="form-control form-control-user mt-2" id="nameObjetivo" name="nameObjetivo">
                             </div>
                             <div class="form-group mb-4">
-                                Descripción:
+                                Final:
                                 <input type="textarea" class="form-control form-control-user my-2" id="descriptionObjetivo" name="descriptionObjetivo">
                             </div>
             
@@ -91,7 +91,7 @@
     
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="crearObjetivo()">Añadir</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="crearHito()">Añadir</button>
                     </div>
                 </div>
                 </div>
@@ -106,11 +106,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <p>¿Seguro que deseas borrar este objetivo?</p>
+                    <p>¿Seguro que deseas borrar este hito?</p>
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="borrarObjetivo()">Borrar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="borrarHito()">Borrar</button>
                     </div>
                 </div>
                 </div>
