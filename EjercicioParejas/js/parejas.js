@@ -104,13 +104,14 @@ function comprobarAcierto(){
             obtenerResultados();
         }
     }else{
+        
         setTimeout(function(){
             document.getElementById(cartasLevantadas[0]).innerHTML= cartaTapada
             document.getElementById(cartasLevantadas[1]).innerHTML= cartaTapada
             cartasLevantadas=[]
             numeroCartasLevantadas = 0;
             cambioJugador();
-        }, 500);    
+        }, 400);    
     }
 }
 
