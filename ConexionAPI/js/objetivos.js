@@ -175,9 +175,6 @@ function previoModificar (id) {
     
     }).catch((error)=>{console.log(error)});
 
-    
-   
-
 }
 
 function modificarObjetivo () {
