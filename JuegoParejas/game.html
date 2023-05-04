@@ -38,7 +38,7 @@
                         <div class="offset-3 col-6">
                             <div class="card border-5 border-success" id="cardJugador1">
                                 <div class="card-header">
-                                    <p>Jugador 1</p>
+                                    <p id="nameJugador1">Jugador 1</p>
                                     <p>Puntos: <nav id="PuntosJugador1"></nav></p>
                                 </div>
                                 <div class="card-body">
@@ -161,7 +161,7 @@
                         <div class="offset-3 col-6">
                             <div class="card" id="cardJugador2">
                                 <div class="card-header">
-                                    <p>Jugador 2</p>
+                                    <p id="nameJugador2">Jugador 2</p>
                                     <p>Puntos: <nav id="PuntosJugador2"></nav></p>
                                 </div>
                                 <div class="card-body">
@@ -203,8 +203,7 @@
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title">Inicio Juego</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title mx-auto">Iniciar Partida</h5>
                 </div>
                 <div class="modal-body">
                 <form id="formInicio" name="formInicio">
@@ -214,13 +213,30 @@
                     </div>
                     <div class="form-group">
                         Jugador 2:
-                        <input type="text" class="form-control form-control-user my-2" id="namePlayer1" name="namePlayer1">
+                        <input type="text" class="form-control form-control-user my-2" id="namePlayer2" name="namePlayer2">
                     </div>
                 </form>
                 </div>
 
                 <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="iniciar()">Comenzar</button>
+                <button type="button" class="btn btn-primary mx-auto w-100" data-bs-dismiss="modal" onclick="cambiarNombres()">Comenzar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal Final -->
+        <div class="modal fade" tabindex="-1" id="modalFinal" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mx-auto">Fin de la partida</h5>
+                </div>
+                <div class="modal-body mx-auto py-5">
+                    <h1 id="ganador"></h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary mx-auto w-100" data-bs-dismiss="modal" onclick="reset()">Jugar de nuevo</button>
                 </div>
             </div>
             </div>

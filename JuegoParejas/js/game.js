@@ -1,6 +1,8 @@
 const mapaImagenes = new Map();
 const cardSinBorde = "card";
 const cardConBorde = "card border-5 border-success";
+const modalInicio = new bootstrap.Modal(document.getElementById("modalInicio"))
+const modalFinal = new bootstrap.Modal(document.getElementById("modalFinal"))
 
 mapaImagenes.set(1, 'ace.png');
 mapaImagenes.set(2, 'brook.png');
@@ -18,7 +20,8 @@ mapaImagenes.set(12,'zoro.png');
 
 let arrayAleatorios = [24]
 
-
+let nameJugador1 = "";
+let nameJugador2 = "";
 let clickUno = 0;
 let clickUno_numeroAleatorio = 0;
 let clickDos = 0;
@@ -32,11 +35,6 @@ let puntosTotales = 0;
 inicio();
 
 function inicio() {
-    
-    $(document).ready(function()
-    {
-       $("#mostrarmodal").modal("show");
-    });
 
     random();
 
@@ -50,6 +48,13 @@ function inicio() {
 
     console.log("Funcion inicial terminada correctamente")
 
+    modalInicio.show()
+
+}
+
+function reset() {
+
+    window.location.assign('game.html');
 }
 
 function random() {
@@ -74,6 +79,21 @@ function random() {
             }
         }
     }   
+}
+
+function cambiarNombres(){
+
+    
+    var formulario = document.forms.formInicio;
+
+    //Guardamos el nombre de los jugadores
+    nameJugador1 = formulario.namePlayer1.value;
+    nameJugador2 = formulario.namePlayer2.value;
+
+    //Cambiamos el nombre de los jugadores en el HTML
+    document.getElementById("nameJugador1").innerHTML = nameJugador1;
+    document.getElementById("nameJugador2").innerHTML = nameJugador2;
+
 }
 
 function clickImagen(image) {
@@ -178,8 +198,33 @@ function incrementarPuntos(numJugador, numImagen) {
     imagen.className= "d-block w-100 border border-danger";
     columna.appendChild(imagen);
 
-    //Cambiamos de jugador
-    cambiarJugador(numJugador);
+    console.log("Puntos totales: " + puntosTotales)
+    if (puntosTotales === 12) {
+        console.log("Partida terminada")
+        var nombreGanador;
+
+        if (puntoJugador1 > puntoJugador2){
+
+            nombreGanador = "Ganador " + nameJugador1;
+
+        } else if ((puntoJugador1 < puntoJugador2)) {
+
+            nombreGanador = "Ganador " + nameJugador2;
+
+        } else {
+
+            nombreGanador = "Empate";
+        }
+
+        document.getElementById("ganador").innerHTML = nombreGanador;
+
+        modalFinal.show();
+
+    } else {
+        //Cambiamos de jugador
+        cambiarJugador(numJugador);
+    }
+   
 
 }
 
