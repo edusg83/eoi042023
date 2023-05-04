@@ -3,7 +3,35 @@
 }
 
 .carta{
-    width: 95px;
-    height:95px;
-    background-color: aqua;
+    width: 110px;
+    height:110px;
+   border: none;
+   background-color: none;
+   overflow: hidden;
+   align-items: flex-start;
+  
+   
+}
+
+#tablero{
+    background-color: red;
+    overflow: hidden;
+    padding-right: 10px;
+    max-width: 900px;
+    border-radius: 20px;
+    background-image: url(../image/fondo.jpg);
+}
+
+img{
+    border-radius: 5px;
+    opacity: 1;
+}
+
+main,body{
+    background-color: rgb(238, 234, 242);
+}
+
+.card{
+    background-color: rgb(222, 221, 223);
+    min-height: 255px;
 }

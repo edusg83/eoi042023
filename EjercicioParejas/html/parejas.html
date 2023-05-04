@@ -17,125 +17,54 @@
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" id="logo" href="#">Une dos parejas para sumar</a>
+           
+            <h1 class="h3 mb-2 text-gray-800 text-center ms-4" style="color: aliceblue;">Turno de <b>Jugador: 1</b></h1>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link"  href="parejas.html">Nueva partida</a>
+                    <a class="nav-link" href="parejas.html">Nueva partida</a>
                 </div>
             </div>
         </div>
     </nav>
-<main>
+    <main>
+        <div id="wrapper">
+            <div id="marcoTablero" class="container align-content-center  pt-3 pb-3 d-flex">
 
-<div id="wrapper">
-    <div id="marcoTablero" class="container align-content-center text-lg-center mt-3">
-        <h1 class="h3 mb-2 text-gray-800">Turno del Jugador: 1</h1>
-    
-    <div class="container-fluid d-flex flex-row">
-        <div class="col-3">
-            <p>Jugador 1</p>
-        </div>
+                <div class="container-fluid col-3 ms-0 ps-0 ">
+                    <div class="container col-3 "></div>
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <b>Jugador 1</b>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Puntuacion: <b> 5</b></h5>
+                            <img src="../image/7.png" class="p-1" width="50px" style="background-color: aliceblue;">
+                        </div>
+                    </div>
 
-        <div class="d-grid col-6 m-0 p-0 justify-content-around"> 
-            <div class="row"> 
-                <div class="col-2">
-                    <button class="carta">
-                        <img src="../image/bufalo.png" alt="boton de actualizar" title="actualizar tabla" 
-                        width="80px" height="80px" />
-                    </button>
+                    <div class="card">
+                        <div class="card-header">
+                            <b>Jugador 2 </b>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Puntuacion: <b> 5</b></h5>
+                            <img src="../image/5.png" class="p-1" width="50px" style="background-color: aliceblue;">
+                            
+                        </div>
+                    </div>
+                </div>
 
+                <div class=" d-grid col-8 me-5" id="tablero">
                     
+                    
+                </div>
 
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-            </div>
-            <div class="row"> 
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-            </div>
-            <div class="row"> 
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-            </div>
-            <div class="row"> 
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
-                <div class="col-2">
-                    <button class="carta"></button>
-                </div>
+
             </div>
         </div>
-
-        <div class=" col-3 ms-4" >
-            <p>Jugador 2</p>
-        </div>
     </div>
+    </main>
 
-    </div>
-</div>
-</main>
-<footer class="py-4 bg-dark mt-5">
-    <p class="m-0 text-center text-white">G.O Administration S.A</p>
-</footer>
 </body>
 <script src="../js/parejas.js"></script>
 
