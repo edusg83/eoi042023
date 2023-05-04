@@ -27,6 +27,7 @@ let turnoJugador1 = true;
 let turnoJugador2 = false;
 let puntoJugador1 = 0;
 let puntoJugador2 = 0;
+let puntosTotales = 0;
 
 inicio();
 
@@ -145,6 +146,9 @@ function clickImagen(image) {
 }
 
 function incrementarPuntos(numJugador, numImagen) {
+
+    //Incrementamos el puntaje total
+    puntosTotales++;
 
     var punto = 0;
 
