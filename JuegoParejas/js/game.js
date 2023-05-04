@@ -21,8 +21,10 @@ let clickUno = 0;
 let clickUno_numeroAleatorio = 0;
 let clickDos = 0;
 let clickDos_numeroAleatorio = 0;
-let turnoJugador1 = false;
+let turnoJugador1 = true;
 let turnoJugador2 = false;
+let puntoJugador1 = 0;
+let puntoJugador2 = 0;
 
 inicio();
 
@@ -82,6 +84,7 @@ function clickImagen(image) {
         //Esperamos dos segundos
         setTimeout(() => {  
             
+            //Si las parejas no coinciden
             if (clickUno_numeroAleatorio !== clickDos_numeroAleatorio) {
 
                 document.getElementById(clickUno).src="images/FondoGris.png";
@@ -93,7 +96,24 @@ function clickImagen(image) {
                 clickUno_numeroAleatorio = 0;
                 clickDos_numeroAleatorio = 0;
         
+            //Si las parejas coinciden
             } else {
+
+                if(turnoJugador1){
+
+                    turnoJugador1 = false;
+                    turnoJugador2 = true;
+
+                    incrementarPuntos(1, clickUno_numeroAleatorio);
+
+                } else if (turnoJugador2){
+
+                    turnoJugador1 = true;
+                    turnoJugador2 = false;
+
+                    incrementarPuntos(2, clickUno_numeroAleatorio);
+                }
+
                 //Reseteamos las variables
                 clickUno = 0;
                 clickDos = 0;
@@ -104,6 +124,28 @@ function clickImagen(image) {
 
     }
 
-    
+}
+
+function incrementarPuntos(numJugador, numImagen) {
+
+    var punto = 0;
+
+    //Sumamos un punto al jugador ganador
+    if (numJugador === 1) {
+        puntoJugador1++;
+        punto = puntoJugador1;
+
+    } else if (numJugador === 2) {
+        puntoJugador2++;
+        punto = puntoJugador2;
+    }
+
+
+    var columna = document.getElementById("Jugador" + numJugador + "Punto" + punto);
+
+    var imagen = document.createElement("img");
+    imagen.src="images/" + mapaImagenes.get(numImagen);
+    imagen.className= "d-block w-100 border border-danger";
+    columna.appendChild(imagen);
 
 }
