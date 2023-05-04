@@ -1,4 +1,6 @@
 const mapaImagenes = new Map();
+const cardSinBorde = "card";
+const cardConBorde = "card border-5 border-success";
 
 mapaImagenes.set(1, 'ace.png');
 mapaImagenes.set(2, 'brook.png');
@@ -69,6 +71,7 @@ function random() {
 }
 
 function clickImagen(image) {
+
     if (clickUno === 0) {
 
         document.getElementById(image.id).src="images/" + mapaImagenes.get(arrayAleatorios[Number(image.id - 1)]);
@@ -95,6 +98,21 @@ function clickImagen(image) {
                 clickDos = 0;
                 clickUno_numeroAleatorio = 0;
                 clickDos_numeroAleatorio = 0;
+
+                if(turnoJugador1){
+
+                    turnoJugador1 = false;
+                    turnoJugador2 = true;
+
+                    cambiarJugador(1);
+
+                } else if (turnoJugador2){
+
+                    turnoJugador1 = true;
+                    turnoJugador2 = false;
+
+                    cambiarJugador(2);
+                }
         
             //Si las parejas coinciden
             } else {
@@ -140,12 +158,32 @@ function incrementarPuntos(numJugador, numImagen) {
         punto = puntoJugador2;
     }
 
+    //Incrementamos el puntaje
+    var imagenJugador = document.getElementById("PuntosJugador" + numJugador);
+    imagenJugador.innerHTML = punto;
 
+    //Añadimos la imagen
     var columna = document.getElementById("Jugador" + numJugador + "Punto" + punto);
-
     var imagen = document.createElement("img");
     imagen.src="images/" + mapaImagenes.get(numImagen);
     imagen.className= "d-block w-100 border border-danger";
     columna.appendChild(imagen);
 
+    //Cambiamos de jugador
+    cambiarJugador(numJugador);
+
+}
+
+function cambiarJugador (numJugador) {
+    //Cambiamos el estilo de la carta del jugador
+    var card = document.getElementById("cardJugador" + numJugador);
+    card.className = cardSinBorde;
+
+    if(numJugador == 1){
+        var cardSiguienteJugador = document.getElementById("cardJugador" + (numJugador + 1));
+        cardSiguienteJugador.className = cardConBorde;
+    } else {
+        var cardSiguienteJugador = document.getElementById("cardJugador" + (numJugador - 1));
+        cardSiguienteJugador.className = cardConBorde;
+    }
 }
