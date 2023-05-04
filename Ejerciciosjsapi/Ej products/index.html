@@ -9,7 +9,13 @@
     <script>
       
         const API_URL = 'http://ligafalm.eu:28100/products';
+        const headers = {
+            'Content-Type':'application/json',
+            'Access-Control-Allow-Origin': '*'
 
+        };
+            
+        
         async function getAllProducts() {
             const response = await axios.get(API_URL,{headers});
             return response.data;
@@ -26,7 +32,7 @@
         }
 
         async function updateProduct(product) {
-            const response = await axios.put(`${API_URL}/${id}`,{headers});
+            const response = await axios.put(`${API_URL}/${id}`,{headers}, product);
             return response.data;
         }
 
@@ -60,7 +66,7 @@
             const name = document.getElementById('name').value;
             const description = document.getElementById('description').value;
             const code = document.getElementById('code').value;
-            const product = { id, name, description, code };
+            const product = { "id":id, "name":name, "description":description, "code":code };
             updateProduct(product).then(updatedProduct => {
                 console.log('Updated product:', updatedProduct);
             })};
@@ -95,7 +101,7 @@
     <button onclick="create()">Create product</button>
     <h2>Update product</h2>
     <label for="id">ID:</label>
-    <input type="text" id="id">
+    <input type="text" id="id-2">
     <br>
     <label for="name">Name:</label>
     <input type="text" id="name">
@@ -110,7 +116,7 @@
     <hr>
     <h2>Delete product</h2>
     <label for="id">ID:</label>
-    <input type="text" id="id">
+    <input type="text" id="id-3">
     <button onclick="deleteById()">Delete product</button>
 </body>
 </html>
