@@ -142,3 +142,60 @@ function crearObjetivo() {
     }).catch((error)=>{console.log(error)});
 }
 
+function previoModificar (id) {
+
+    idObjetivo = id;
+    var formulario = document.forms.formModificarObjetivo;
+    var arrayObjetivo;
+
+    axios.get('http://ligafalm.eu:28100/users?page=0&size=100', {headers})
+    .then((respuestaUsuarios) => {
+
+        let arrayUsuarios = respuestaUsuarios.data;
+        let optionUsuarios = ``;
+
+        arrayUsuarios.forEach(usuario => {
+            optionUsuarios += `<option value="${usuario.username}">${usuario.username}</option>`;
+
+        })
+
+        document.getElementById("selectModAssignedTo").innerHTML = optionUsuarios;
+
+    }).catch((error)=>{console.log(error)});
+
+    axios.get('http://ligafalm.eu:28100/goals/' + idObjetivo, {headers})
+    .then((respuestaObjetivo) => {
+
+        arrayObjetivo = respuestaObjetivo.data;
+        
+        formulario.nameModObjetivo.value = arrayObjetivo.name;
+        formulario.descriptionModObjetivo.value = arrayObjetivo.description;
+        formulario.selectModAssignedTo.value = arrayObjetivo.assignedTo;
+        formulario.progressModObjetivo.value = arrayObjetivo.progress;
+    
+    }).catch((error)=>{console.log(error)});
+
+    
+   
+
+}
+
+function modificarObjetivo () {
+    var formulario = document.forms.formModificarObjetivo;
+
+    const dataRequest = {
+        "id": idObjetivo,
+        "name": formulario.nameModObjetivo.value,
+        "description": formulario.descriptionModObjetivo.value,
+        "assignedTo": formulario.selectModAssignedTo.value,
+        "progress": formulario.progressModObjetivo.value
+    }
+
+    axios.put('http://ligafalm.eu:28100/goals/' + idObjetivo, dataRequest, {headers})
+    .then((respuesta)=>{
+        console.log(respuesta.data);
+        window.location.assign('objetivos.html');
+    })
+    .catch((error)=>{console.log(error)});
+}
+

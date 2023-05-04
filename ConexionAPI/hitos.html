@@ -51,8 +51,8 @@
                                     <div class="row text-center">
                                         <div class="col-12" id="resultados">
                                         </div>
-                                        <div class="offset-10 col-2">
-                                            <button class="btn btn-primary btn-circle" data-bs-toggle="modal" data-bs-target="#modalCrear" onclick="previoCrear()">
+                                        <div class="offset-9 col-3">
+                                            <button class="btn btn-primary btn-circle" data-bs-toggle="modal" data-bs-target="#modalCrear">
                                                 Nuevo Hito
                                             </button>
                                         </div>
@@ -75,16 +75,17 @@
                     </div>
                     <div class="modal-body">
                     <form id="formCrearHito" name="formCrearHito">
-                        <div class="form-group">
-                            <div class="form-group mb-4">
-                                Inicio:
-                                <input type="text" class="form-control form-control-user mt-2" id="nameObjetivo" name="nameObjetivo">
-                            </div>
-                            <div class="form-group mb-4">
-                                Final:
-                                <input type="textarea" class="form-control form-control-user my-2" id="descriptionObjetivo" name="descriptionObjetivo">
-                            </div>
-            
+                        <div class="form-group mb-4">
+                            Hito:
+                            <input type="text" class="form-control form-control-user mt-2" id="nameHito" name="nameHito">
+                        </div>
+                        <div class="form-group mb-4">
+                            Inicio:
+                            <input type="datetime-local" class="form-control" id="fechaInicio" name="fechaInicio" placeholder="dd/mm/aaaa --:--">
+                        </div>
+                        <div class="form-group mb-4">
+                            Final:
+                            <input type="datetime-local" class="form-control" id="fechaFinal" name="fechaFinal" placeholder="dd/mm/aaaa --:--">
                         </div>
                     </form>
                     </div>
@@ -96,6 +97,44 @@
                 </div>
                 </div>
             </div>
+
+            <!-- Modal Modificar -->
+            <div class="modal fade" tabindex="-1" id="modalModificar" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title">Crear hito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <form id="formModificarHito" name="formModificarHito">
+                        <div class="form-group mb-4">
+                            Hito:
+                            <input type="text" class="form-control form-control-user mt-2" id="nameHito" name="nameHito">
+                        </div>
+                        <div class="form-group mb-4">
+                            Inicio:
+                            <input type="datetime-local" class="form-control" id="fechaInicio" name="fechaInicio" placeholder="dd/mm/aaaa --:--">
+                        </div>
+                        <div class="form-group mb-4">
+                            Final:
+                            <input type="datetime-local" class="form-control" id="fechaFinal" name="fechaFinal" placeholder="dd/mm/aaaa --:--">
+                        </div>
+                        <div class="form-group mb-4">
+                            Progreso:
+                            <input type="text" class="form-control form-control-user mt-2" id="progressHito" name="progressHito">
+                        </div>
+                    </form>
+                    </div>
+    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="modificarHito()">Modificar</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+    
     
             <!-- Modal Borrar -->
             <div class="modal fade" tabindex="-1" id="modalBorrar" aria-hidden="true">

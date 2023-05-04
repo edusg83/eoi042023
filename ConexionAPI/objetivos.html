@@ -104,6 +104,45 @@
             </div>
         </div>
 
+        <!-- Modal Modificar -->
+        <div class="modal fade" tabindex="-1" id="modalModificar" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title">Modificar objetivo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form id="formModificarObjetivo" name="formModificarObjetivo">
+                    <div class="form-group">
+                        <div class="form-group mb-4">
+                            Objetivo:
+                            <input type="text" class="form-control form-control-user mt-2" id="nameModObjetivo" name="nameModObjetivo">
+                        </div>
+                        <div class="form-group mb-4">
+                            Descripción:
+                            <input type="textarea" class="form-control form-control-user my-2" id="descriptionModObjetivo" name="descriptionModObjetivo">
+                        </div>
+                        <div class="form-group mb-4">
+                            Selecciona la asignación:
+                            <select class="form-select mt-2" name="selectModAssignedTo" id="selectModAssignedTo"></select>
+                        </div>
+                        <div class="form-group mb-4">
+                            Progreso:
+                            <input type="text" class="form-control form-control-user mt-2" id="progressModObjetivo" name="progressModObjetivo">
+                        </div>
+                    </div>
+                </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="modificarObjetivo()">Modificar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
         <!-- Modal Borrar -->
         <div class="modal fade" tabindex="-1" id="modalBorrar" aria-hidden="true">
             <div class="modal-dialog">

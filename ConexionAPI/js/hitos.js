@@ -34,11 +34,11 @@ axios.get(urlHitos, {headers})
 
         filas += `
         <tr>
-            <td class="col-2">${element.name}</td>
+            <td class="col-3">${element.name}</td>
             <td class="col-2">${fechaInicio.toLocaleDateString("es-ES")}</td>
             <td class="col-2">${fechaFinal.toLocaleDateString("es-ES")}</td>
             <td class="col-2">${element.progress}</td>
-            <td class="col-2">
+            <td class="col-3">
                 <button data-bs-toggle="modal" data-bs-target="#modalBorrar" onclick="previoBorrar(${element.id})" class="btn btn-primary btn-circle">
                     <i class="bi bi-trash"></i>
                 </button>
@@ -54,92 +54,80 @@ axios.get(urlHitos, {headers})
 
 }).catch((error)=>{console.log(error)});
 
-let idObjetivo = 0;
+let idHito = 0;
 
 function previoBorrar (id) {
-    idObjetivo = id;
+    idHito = id;
 }
 
-function borrarObjetivo() {
+function borrarHito() {
 
-    axios.delete('http://ligafalm.eu:28100/goals/' + idObjetivo)
+    axios.delete('http://ligafalm.eu:28100/milestones/' + idHito)
     .then((respuesta)=>{
 
         console.log(respuesta.data);
-        window.location.assign('objetivos.html');
+        window.location.assign('hitos.html');
 
     }).catch((error)=>{console.log(error)});
 
 }
 
-function previoCrear () {
+function crearHito() {
 
-    axios.get('http://ligafalm.eu:28100/users?page=0&size=100', {headers})
-    .then((respuestaUsuarios) => {
+    var formulario = document.forms.formCrearHito;
 
-        let arrayUsuarios = respuestaUsuarios.data;
-
-        let optionUsuarios = ``;
-
-        arrayUsuarios.forEach(usuario => {
-            
-            optionUsuarios += `<option value="${usuario.id}">${usuario.username}</option>`
-        
-        });
-
-        document.getElementById("selectAssignedTo").innerHTML = optionUsuarios;
-
-    }).catch((error)=>{console.log(error)});
-
-    axios.get('http://ligafalm.eu:28100/milestones?page=0&size=100', {headers})
-    .then((respuestaHitos) => {
-
-        let arrayHitos = respuestaHitos.data;
-
-        let optionHitos = ``;
-
-        arrayHitos.forEach(hito => {
-
-            optionHitos += `<option value="${hito.id}">${hito.name}</option>`
-        
-        });
-
-        document.getElementById("selectMilestone").innerHTML = optionHitos;
-
-    }).catch((error)=>{console.log(error)});
-
-}
-
-function crearObjetivo() {
-
-    var formulario = document.forms.formCrearObjetivo;
-
-    const dataRequestObjetivo = {
-        "name": formulario.nameObjetivo.value,
-        "description": formulario.descriptionObjetivo.value,
-        "assignedTo": formulario.selectAssignedTo.value,
-        "progress": 0
+    const dataRequest = {
+        "name": formulario.nameHito.value,
+        "start": formulario.fechaInicio.value,
+        "end": formulario.fechaFinal.value
     }
 
-    axios.post("http://ligafalm.eu:28100/goals/", dataRequestObjetivo, {headers})
+    axios.post("http://ligafalm.eu:28100/milestones/", dataRequest, {headers})
     .then((respuestaObjetivo)=>{
 
         console.log(respuestaObjetivo.data);
-
-        const dataRequestHito = {
-            "idMilestone": formulario.selectMilestone.value,
-            "goals": respuestaObjetivo.data
-        }
-
-        
-        axios.put("http://ligafalm.eu:28100/goals/milestone/" + formulario.selectMilestone.value, dataRequestHito, {headers})
-        .then((respuestaHito)=>{
-
-            console.log(respuestaHito.data);
-            window.location.assign('objetivos.html');
-
-        }).catch((error)=>{console.log(error)});
+        window.location.assign('hitos.html');
 
     }).catch((error)=>{console.log(error)});
+}
+
+function previoModificar (id) {
+
+    idHito = id;
+
+    axios.get('http://ligafalm.eu:28100/milestones/' + idHito, {headers})
+    .then((respuesta) => {
+
+        let hito = respuesta.data;
+
+        var formulario = document.forms.formModificarHito;
+
+        formulario.nameHito.value = hito.name;
+        formulario.fechaInicio.value = hito.start;
+        formulario.fechaFinal.value = hito.end;
+        formulario.progressHito.value = hito.progress;
+
+    })
+    .catch((error)=>{console.log(error)});
+}
+
+function modificarHito () {
+
+    var formulario = document.forms.formModificarHito;
+
+    const dataRequest = {
+        "id": idHito,
+        "name": formulario.nameHito.value,
+        "start": formulario.fechaInicio.value,
+        "end": formulario.fechaFinal.value,
+        "progress": formulario.progressHito.value
+    }
+
+    axios.put('http://ligafalm.eu:28100/milestones/' + idHito, dataRequest, {headers})
+    .then((respuesta)=>{
+        console.log(respuesta.data);
+        window.location.assign('hitos.html');
+    })
+    .catch((error)=>{console.log(error)});
 }
 
