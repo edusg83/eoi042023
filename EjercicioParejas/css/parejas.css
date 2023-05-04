@@ -35,3 +35,27 @@ main,body{
     background-color: rgb(222, 221, 223);
     min-height: 255px;
 }
+
+#rotulo{
+    color: aliceblue;
+}
+label{
+    white-space: nowrap;
+}
+
+#cabecera2{
+    background-color: #c3b086;
+}
+
+#cabecera1{
+    background-color: rgba(24, 29, 37, 0.899);
+    color: aliceblue;
+}
+
+#cuerpoTarjetaJugador1{
+    background-color: rgba(5, 8, 14, 0.234);
+}
+
+#cuerpoTarjetaJugador2{
+    background-color: #c3b086ac
+}

@@ -2,8 +2,9 @@
 <html lang="es" dir="ltr">
 
 <head>
-    <title>API</title>
+    <title>El juego de la parejas</title>
     <meta charset="utf-8">
+    <link rel="icon" href="../image/11.png" type="image/png" sizes="16x16">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/parejas.css">
@@ -18,7 +19,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
            
-            <h1 class="h3 mb-2 text-gray-800 text-center ms-4" style="color: aliceblue;">Turno de <b>Jugador: 1</b></h1>
+            <h1 class="h3 mb-2 text-gray-800 text-center ms-4" id="rotulo">Turno de <b id="rotuloJugador">Jugador: 1</b></h1>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link" href="parejas.html">Nueva partida</a>
@@ -31,31 +32,29 @@
             <div id="marcoTablero" class="container align-content-center  pt-3 pb-3 d-flex">
 
                 <div class="container-fluid col-3 ms-0 ps-0 ">
-                    <div class="container col-3 "></div>
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <b>Jugador 1</b>
+                    <div class="container col-3"></div>
+                    <div class="card mb-3"  id="jug1">
+                        <div class="card-header" id="cabecera1">
+                            <b id="tarjetaJug1">Jugador 1</b>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Puntuacion: <b> 5</b></h5>
-                            <img src="../image/7.png" class="p-1" width="50px" style="background-color: aliceblue;">
+                        <div class="card-body" id="cuerpoTarjetaJugador1">
+                            <h5 class="card-title">Puntuacion: <b id="puntuacionJug1"> 0</b></h5>
+                            
                         </div>
                     </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <b>Jugador 2 </b>
+         
+                    <div class="card" id="jug2">
+                        <div class="card-header" id="cabecera2">
+                            <b id="tarjetaJug2">Jugador 2 </b>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Puntuacion: <b> 5</b></h5>
-                            <img src="../image/5.png" class="p-1" width="50px" style="background-color: aliceblue;">
+                        <div class="card-body" id="cuerpoTarjetaJugador2">
+                            <h5 class="card-title">Puntuacion: <b id="puntuacionJug2"> 0</b></h5>
                             
                         </div>
                     </div>
                 </div>
 
                 <div class=" d-grid col-8 me-5" id="tablero">
-                    
                     
                 </div>
 
@@ -64,6 +63,61 @@
         </div>
     </div>
     </main>
+
+<!--Modal Victoria-->
+<div class="modal" id="modalVictoria" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg " role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><b>Puntuaciones finales</b></h5>
+         
+        
+          </button>
+        </div>
+        <div class="modal-body d-flex justify-content-center">
+            <div id="imagenModalVictoria" class="me-4"></div>
+            
+            <div class="d-flex flex-column justify-content-center">
+          <h2 class="mb-3"id="mensajeModalVictoria">¡VICTORIA DE <b id="ganador">JUGADOR1!</b></h2>
+          <p class="ms-3">Puntuación de <b id="jugVictoria1">jugador1:</b> con <b id="puntosVictoria1">0</b> puntos</p>
+          <p class="ms-3">Puntuación de <b id="jugVictoria2">jugador2:</b> con <b id="puntosVictoria2">0</b> puntos</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="cerrarModalVictoria()"> Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal Jugadores-->
+<div class="modal" id="modalJugadores" tabindex="-1" role="dialog" data-bs-backdrop="static">
+    <div class="modal-dialog " role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><b>Introduce el nombre de los jugadores</b></h5>
+    
+          </button>
+        </div>
+        <div class="modal-body d-flex ms-4">
+            <div >
+                <div class="form-group d-flex">
+                    <label for="entradaNombreJugador1">Nombre jugador 1: </label>
+                    <input type="text" class="form-control form-control-sm mb-3 ms-3" id="entradaNombreJugador1">
+                </div>
+                <div class="form-group d-flex">
+                    <label for="entradaNombreJugador2">Nombre jugador 2: </label>
+                    <input type="text" class="form-control form-control-sm ms-3" id="entradaNombreJugador2" >
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" onclick="cargarPartida()"> Jugar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 </body>
 <script src="../js/parejas.js"></script>
