@@ -143,6 +143,10 @@ function clickImagen(image) {
             //Si las parejas coinciden
             } else {
 
+                document.getElementById(clickUno).onclick = null;
+                document.getElementById(clickDos).onclick = null;
+
+
                 if(turnoJugador1){
 
                     turnoJugador1 = false;
